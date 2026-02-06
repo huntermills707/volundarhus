@@ -1,0 +1,8 @@
+<div style="backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);padding-left: 1em;padding-right: 1em;padding-bottom: 1em;padding-top: 0.05em;">
+<h1>{{ .Site.Params.author }}</h1>
+{{ if reflect.IsSlice .Site.Params.info }}
+<h2>{{ range .Site.Params.info }}{{ . | markdownify }}<br>{{ end}}</h2>
+{{ else }}
+<h2>{{ .Site.Params.info | markdownify }}</h2>
+{{ end }}
+</div>
