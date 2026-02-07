@@ -60,7 +60,7 @@ style = "github-dark"
   name = "Email"
   icon = "fa-solid fa-envelope fa-2x"
   weight = 3
-  url = "hunter.mills@pm.me"
+  url = "mailto:hunter.mills@pm.me"
 
 # Menu links
 [[menu.main]]
