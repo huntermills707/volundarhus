@@ -3,23 +3,20 @@
   display: flex;
   margin-top: 1.6rem;
   margin-bottom: 3.2rem;
+
   @media only screen and (max-width: 768px) {
     margin-top: 1rem;
     margin-bottom: 1.6rem;
   }
 
   header{
-    margin-top: 6.4rem;
-    margin-bottom: 3.2rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); 
-    box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
+    margin-top: 0rem;
+    margin-bottom: .6rem;
 
     h1 {
-
       font-size: 4.2rem;
       line-height: 4.6rem;
-      margin: 0;
+      margin-left: 1.6rem;
 
       @media only screen and (max-width: 768px) {
         font-size: 4rem;
@@ -29,6 +26,10 @@
   }
 
   article {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Safari */
+    border-radius: 0px;
+    box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
     a:where(.external-link):not(:has(img)):after {
       @extend %fa-icon;
       @extend .fa-solid;
@@ -234,11 +235,8 @@
   .error {
     text-align: center;
 
-    /* Blur the stuff *behind* the element */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); /* Safari */
-
-    /* Optional styling */
     border-radius: 0px;
     box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
 

@@ -49,17 +49,21 @@ body.colorscheme-dark {
   body.colorscheme-dark td {
     padding: 1.6rem; }
   body.colorscheme-dark table {
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    margin-left: 1.2rem;
+    margin-bottom: 4rem;
+    text-align: center; }
   body.colorscheme-dark table td,
   body.colorscheme-dark table th {
-    border: 2px solid #dadada; }
+    border: none; }
   body.colorscheme-dark table tr:first-child th {
-    border-top: 0; }
+    border-bottom: 1px solid #4f4f4f;
+    width: 15%; }
   body.colorscheme-dark table tr:last-child td {
     border-bottom: 0; }
   body.colorscheme-dark table tr td:first-child,
   body.colorscheme-dark table tr th:first-child {
-    border-left: 0; }
+    border-top: 0; }
   body.colorscheme-dark table tr td:last-child,
   body.colorscheme-dark table tr th:last-child {
     border-right: 0; }
@@ -116,17 +120,21 @@ body.colorscheme-dark {
     body.colorscheme-auto td {
       padding: 1.6rem; }
     body.colorscheme-auto table {
-      border-collapse: collapse; }
+      border-collapse: collapse;
+      margin-left: 1.2rem;
+      margin-bottom: 4rem;
+      text-align: center; }
     body.colorscheme-auto table td,
     body.colorscheme-auto table th {
-      border: 2px solid #dadada; }
+      border: none; }
     body.colorscheme-auto table tr:first-child th {
-      border-top: 0; }
+      border-bottom: 1px solid #4f4f4f;
+      width: 15%; }
     body.colorscheme-auto table tr:last-child td {
       border-bottom: 0; }
     body.colorscheme-auto table tr td:first-child,
     body.colorscheme-auto table tr th:first-child {
-      border-left: 0; }
+      border-top: 0; }
     body.colorscheme-auto table tr td:last-child,
     body.colorscheme-auto table tr th:last-child {
       border-right: 0; } }
