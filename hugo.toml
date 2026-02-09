@@ -57,9 +57,14 @@ style = "github-dark"
   weight = 2
   url = "https://linkedin.com/in/hunter-mills"
 [[params.social]]
+  name = "ORCID"
+  icon = "fa-brands fa-orcid fa-2x"
+  weight = 3
+  url = "https://orcid.org/0009-0006-6791-4570"
+[[params.social]]
   name = "Email"
   icon = "fa-solid fa-envelope fa-2x"
-  weight = 3
+  weight = 4
   url = "mailto:hunter.mills@pm.me"
 
 # Menu links
