@@ -1,4 +1,5 @@
 baseURL = 'https://example.org/'
+publishDir = "docs"
 languageCode = 'en-us'
 title = "Volundarhus"
 theme = "hugo-coder"
@@ -11,7 +12,7 @@ pagerSize = 20
 
 [services]
 [services.disqus]
-shortname = "yourdiscussshortname"
+#shortname = "yourdiscussshortname"
 
 [markup.highlight]
 style = "github-dark"
@@ -28,7 +29,7 @@ style = "github-dark"
   favicon_32 = "/img/favicon-32x32.png"
   favicon_16 = "/img/favicon-16x16.png"
 
-  since = 2019
+  since = 2021
 
   enableTwemoji = true
 
@@ -73,14 +74,10 @@ style = "github-dark"
   weight = 1
   url  = "posts/"
 [[menu.main]]
-  name = "Publications"
-  weight = 2
-  url  = "publications/"
-[[menu.main]]
   name = "Resume/CV"
-  weight = 3
+  weight = 2
   url = "resume/"
 [[menu.main]]
   name = "About"
-  weight = 4
+  weight = 3
   url = "about/"
