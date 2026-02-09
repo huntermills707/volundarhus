@@ -31,6 +31,7 @@
     border-radius: 0px;
     box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
     padding: 1.6rem;
+
     a:where(.external-link):not(:has(img)):after {
       @extend %fa-icon;
       @extend .fa-solid;
@@ -131,6 +132,11 @@
 }
 
 .list {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* Safari */
+  border-radius: 0px;
+  box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
+  padding: 1.6rem;
   ul {
     margin: 3.2rem 0 3.2rem 0;
     list-style: none;
