@@ -45,7 +45,8 @@ For each descriptor‑theme pair we computed *cosine similarity* across 20 stoch
 
 *Take‑home:* Implicit bias is **detectable** in ICU notes, but its direction and magnitude **vary by institution, geography, and era**. In the older Boston dataset, Black descriptors aligned more closely with violent language, whereas in the newer UCSF data they aligned less.
 
-![Fig 1](fig.png)
+|![Fig 1](fig.png)|
+|---|
 
 ## Interpretation
 

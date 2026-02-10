@@ -47,6 +47,7 @@ Overall, each time‑point model used 5k–24k features (the larger number refle
 All models were evaluated on *300 bootstrap* replicates of the held‑out set (1,000 patients per replicate) to obtain robust AUROC/AUPRC distributions.
 
 ![Fig 1](Fig1_HTML.webp)
+|---|
 
 ## Core Results
 
@@ -80,6 +81,7 @@ We mapped the 25 highest‑importance clinical predictors to nodes in the SPOKE 
 These connections provide mechanistic hypotheses—for instance, the repeated appearance of *APOE* and *IL6* bridges hyperlipidemia, osteoporosis, and AD, aligning with prior literature on lipid metabolism and inflammation in neurodegeneration.
 
 ![Fig 2](Fig2_HTML.webp)
+|---|
 
 ## External Validation
 Using the University of California Data Discovery Platform (UCDDP) (five additional UC health systems), we performed a retrospective cohort analysis on two exposures:
