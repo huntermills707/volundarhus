@@ -40,7 +40,7 @@ style = "github-dark"
 
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
-  # customJS = ["js/custom.js"]
+  customJS = ["js/mysketch.js","js/p5.min.js" ]
 
 [taxonomies]
   category = "categories"
