@@ -48,7 +48,7 @@ Traumatic brain injury is often treated as an acute event, yet mounting evidence
 	* Both low and high ADI quintiles exhibited amplified neuropsychiatric risk, but the direction of some comorbidities diverged.
 	* High ADI amplified bipolar disorder, opioid misuse, and suicidality; low ADI correlated with higher cardiovascular incident rates.
 
-|Harzard Ratios|
+|Hazard Ratios|
 |:---:|
 |![Fig1](fig1.png)|
 
