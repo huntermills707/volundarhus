@@ -22,3 +22,10 @@ title : "Resume"
 | ![Stanford Logo](stanford.png) | Stanford University | MS Computational and Mathematical Engineering | 2018 |
 | ![Sonoma State Logo](ssu.png) | Sonoma State University | BS Physics and Astronomy, and BA Mathematics | 2014 |
 | ![SRJC Logo](srjc.png) | Santa Rosa Junior College | AS Mathematics | 2011 |
+
+## Certifications
+
+|   | Organization | Certificate | Date |
+|---|--------------|-------------|------|
+| ![ColumbiaX](columbiaX.png) | ColumbiaX | [CSMM101x: Artificial Intelligence](https://courses.edx.org/certificates/1f3730dd6dd74bc0af92c2e0453d70f9) | 2017 |
+| ![ColumbiaX](columbiaX.png) | ColumbiaX | [CSMM.102x: Machine Learning](https://courses.edx.org/certificates/407dd5d97e074aca8b354a06dd7c5cf8) | 2017 |
