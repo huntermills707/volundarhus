@@ -32,9 +32,9 @@ title : "Resume"
 
 ## Publications
 
-<!-- Cu, C. W., Dundas, N. E., Heintz, T., Sheikh, Z. A., Alonso-Bermudez, B., Walker, J., ..., Mills, H., … & Cobert, J. (2025). Validity of two subjective skin tone scales and its implications on healthcare model fairness. npj Digital Medicine, 8(1), 595. -->
-
 Mashlah, A., Marini, S., **Mills, H.**, Yahya, T., Radmanesh, F., Chalif, J., ... & Izzy, S. (2025). [Traumatic Spinal Cord Injury and Subsequent Risk of Developing Chronic Cardiovascular, Neurologic, Psychiatric, and Endocrine Disorders](/posts/tsci_long_effects/). JAMA Network Open, 8(11), e2541157-e2541157. 
+
+Cu, C. W., Dundas, N. E., Heintz, T., Sheikh, Z. A., Alonso-Bermudez, B., Walker, J., ..., **Mills, H.**, … & Cobert, J. (2025). [Validity of two subjective skin tone scales and its implications on healthcare model fairness](/posts/skin_tone_scales/). npj Digital Medicine, 8(1), 595.
 
 Marquez-Grap, G., Leung, A., Orcales, F., Kranyak, A., Johnson, C., Smith, P., …, **Mills, H.**, ... & Liao, W. (2025). [Monitoring atopic dermatitis using mobile-app based photography and surveys](/posts/dermatitis_monitoring/). Journal of Dermatological Treatment, 36(1), 2555983.
 
