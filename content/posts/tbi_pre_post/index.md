@@ -20,7 +20,7 @@ We fill that gap by:
 
 1. **Including patients with prior mental‑health conditions:** reflecting real‑world clinical populations.
 2. **Propensity‑matching TBI patients to orthotrauma patients** on age, sex, race/ethnicity, insurance, socioeconomic deprivation, and health‑care utilization.
-3. **Tracking both pre‑index (‑1 year) and post‑index (up to +7 yr)** outcomes, allowing a view of baseline risk and the incremental effect of the injury.
+3. **Tracking both pre‑index (‑1 year) and post‑index (up to +7 years)** outcomes, allowing a view of baseline risk and the incremental effect of the injury.
 
 ## Study Design at a Glance
 
