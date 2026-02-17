@@ -15,7 +15,7 @@ math = true
 ## Why Build a New Deprivation Index?
 Most existing socioeconomic measures (ADI, NDI, SVI) rely on PCA‑style factor analysis. That approach forces you to fill every missing cell with a crude average and produces “centered” scores that hide the real magnitude of deprivation. The consequences are obvious:
 
-* **Missing data = garbage imputations** that can completely misrepresent a neighborhood.
+* **Missing data gets filled with crude averages**, which can distort local realities. This also assumes that data is missing at random, which is often false. Rural areas have greater missingness.
 * **Outliers dominate the factor space**, pulling the whole index in the wrong direction.
 * **Interpretability is a nightmare**. The leading component mixes positive and negative loadings, making it impossible to explain to policymakers.
 
@@ -56,15 +56,12 @@ The project is split into five sequential stages (scripts 01a–05c). Here’s t
 5. Validation – Compute Pearson correlations between the PDI and CDC PLACES health outcomes (mental health, diabetes, obesity, etc.) and compare them to NDI, SVI, NRI, and nSES.
 
 
-Future Directions
+## Future Directions
 1. Interactive Data Exploration Dashboard
 A Shiny‑style (or Plotly Dash) web app that lets analysts:
-
 	* Slice the index by geography, year, or demographic subgroup.
 	* Overlay health outcomes, crime rates, or environmental hazards on a map.
 	* Drill down from county to tract with instant recalculation of the GLRM factors for a selected subset.
-
-
 2. Faster Solvers & Distributed Computing
 The SCS solver works but slows dramatically on national‑scale tract data. Switching to a GPU‑accelerated conic solver or distributing the X updates across a Spark cluster would bring runtimes down from hours to minutes.
 3. Expanded Outcome Set
