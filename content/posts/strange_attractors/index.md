@@ -24,7 +24,8 @@ I built this visualization not just to admire the mathematics, but to solve a sp
 
 Most web visualizations of this complexity rely on server-side rendering or WebGL shaders. I wanted something lighter, more portable, and entirely self-contained. This implementation performs all calculations in vanilla JavaScript, iterating through attractor equations point-by-point and rendering directly to an HTML5 Canvas.
 
-The architecture is deliberately modular. `strange-attractor-config.js` houses the differential equations and parameters—swap a few constants and the Lorenz system morphs into a Rössler or Aizawa attractor. `color-config.js` controls the rendering aesthetics, adjusting trail persistence, opacity layers, and color gradients to ensure the background remains readable behind text content.
+The architecture is deliberately modular. `strange-attractor-config.js` houses the differential equations and parameters—swap a few constants and the Lorenz system morphs into a Thomas or Chen attractor. `color-config.js` controls the rendering aesthetics, adjusting trail persistence, opacity layers, and color gradients to ensure the background remains readable behind text content.
+`strange-attractor.js` orchestrates the canvas, the point locations, and the tails fading in and out.
 
 Running at 60fps, the simulation calculates roughly 2,000 points per frame, creating those ghostly trails that slowly fade into the darkness.
 
