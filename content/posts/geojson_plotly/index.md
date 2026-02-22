@@ -12,7 +12,7 @@ series = []
 +++
 
 ## Introduction
-Plotly/Dash makes it easy to build interactive dashboards, and its choropleth maps are a great way to visualize geographic data. Unfortunately, the official example uses outdated unemployment data and an old GeoJSON file. Since U.S. county boundaries change over time, those IDs no longer line up with the latest Census data.
+Plotly/Dash makes it easy to build interactive dashboards, and its choropleth maps are a great way to visualize geographic data. Unfortunately, the [official example](https://plotly.com/python/choropleth-maps/#choropleth-map-using-geojson) uses outdated unemployment data and an old GeoJSON file. Since U.S. county boundaries change over time, those IDs no longer line up with the latest Census data.
 
 ![Choropleth](plotly_choropleth.png)
 
@@ -107,7 +107,7 @@ with open('geojson-counties-fips-post-2024.json', 'w') as fp:
 
 The ACS provides county‑level unemployment rates. Below is a sample API call for 2023 data (append with `&key=<YOUR KEY>`  if you have a US Census API Key):
 
-```
+```http
 https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S2301_C04_001E&ucgid=pseudo(0100000US%240500000)
 ```
 
