@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 +++
 
-Social determinants of health (SDoH) shape outcomes just as much as clinical care. Yet most public‑health data can be hard to grok in tabular or with static visual, obscuring the granular patterns that drive disparities. I recently built a Plotly/Dash visualizer for the Pricipled Deprivation Index—hosted at [pdi‑visualizer.onrender.com](pdi‑visualizer.onrender.com)—letting anyone explore a suite of deprivation indexes alongside CDC‑reported condition rates, all mapped to U.S. counties.
+Social determinants of health (SDoH) shape outcomes just as much as clinical care. Yet most public‑health data can be hard to grok in tabular or with static visual, obscuring the granular patterns that drive disparities. I recently built a Plotly/Dash visualizer for the Pricipled Deprivation Index—hosted at [pdi‑visualizer.onrender.com](https://pdi-visualizer.onrender.com/)—letting anyone explore a suite of deprivation indexes alongside CDC‑reported condition rates, all mapped to U.S. counties.
 
 ![Preview](preview.png)
 
