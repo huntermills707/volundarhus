@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2025-07-16T12:54:28-08:00
-title = "Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses Following Dementia in a Large Electronic Medical Record System (PREPRINT)"
+title = "Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses Following Dementia in a Large Electronic Medical Record System"
 description = ""
 slug = ""
 authors = ["Hunter Mills"]
