@@ -32,7 +32,7 @@ title : "Resume"
 
 ## Publications
 
-Farrand, E., Chung, A., Joshua, J., Dong, H., **Mills, H.**, Lee, A., ... & Butte, A. (2026). Development and validation of a generalisable machine learning algorithm for identifying interstitial lung disease cohorts: a retrospective cohort study. EClinicalMedicine, 93.
+Farrand, E., Chung, A., Joshua, J., Dong, H., **Mills, H.**, Lee, A., ... & Butte, A. (2026). [Development and validation of a generalisable machine learning algorithm for identifying interstitial lung disease cohorts: a retrospective cohort study](/posts/ild_classifier_xuc/). EClinicalMedicine, 93.
 
 Halabi, C., **Mills, H.**, DiGiorgio, A. M., Schenk, G., Israni, S., Peek-Asa, C., & Manley, G. T. (2026). [Civilian Traumatic Brain Injury Is Associated with Longitudinally Increased Risk of PTSD, Suicidality, and Other Mental Health Diagnoses](/posts/tbi_pre_post/). Journal of neurotrauma, 8977151251414145.
 
