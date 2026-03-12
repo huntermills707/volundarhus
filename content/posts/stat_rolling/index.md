@@ -17,7 +17,11 @@ Since then, I've expanded the simulator to handle **full stat generation workflo
 
 If you're a Game Master trying to balance a campaign, a player wondering if your "heroic" house rule is actually too generous, or a developer curious about how to implement exact probability calculations without Monte Carlo sampling, this post is for you.
 
+
 The app is live on [Py.Cafe](https://py.cafe/app/huntermills707/dash-dice-roll-probability) and the source is on [GitHub](https://github.com/huntermills707/DandDandD_StatRolls).
+
+EDIT 3/12: PyCafe service is down. New link on Render.com Hobby Tier Deployment: [here](https://danddandd-statrolls.onrender.com).
+Slow performance on this deployment.
 
 ---
 
