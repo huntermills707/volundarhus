@@ -32,6 +32,8 @@ title : "Resume"
 
 ## Publications
 
+Cu, C., Heintz, T., Dundas, N., Farhan, H., **Mills, H.**, Lee, J., Williams, C., ... & Cobert, J. (2026) [Time and Motion Analysis of Controlled Substance Disposals: A Study of Workflows at a Single Center using Automated Dispensing Cabinets](/posts/time_and_motion/). Anesthesiology Open 1(1):p e0006.
+
 Farrand, E., Chung, A., Joshua, J., Dong, H., **Mills, H.**, Lee, A., ... & Butte, A. (2026). [Development and validation of a generalisable machine learning algorithm for identifying interstitial lung disease cohorts: a retrospective cohort study](/posts/ild_classifier_xuc/). EClinicalMedicine, 93.
 
 Halabi, C., **Mills, H.**, DiGiorgio, A. M., Schenk, G., Israni, S., Peek-Asa, C., & Manley, G. T. (2026). [Civilian Traumatic Brain Injury Is Associated with Longitudinally Increased Risk of PTSD, Suicidality, and Other Mental Health Diagnoses](/posts/tbi_pre_post/). Journal of neurotrauma, 8977151251414145.
