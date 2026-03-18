@@ -36,7 +36,7 @@ Farrand, E., Chung, A., Joshua, J., Dong, H., **Mills, H.**, Lee, A., ... & Butt
 
 Halabi, C., **Mills, H.**, DiGiorgio, A. M., Schenk, G., Israni, S., Peek-Asa, C., & Manley, G. T. (2026). [Civilian Traumatic Brain Injury Is Associated with Longitudinally Increased Risk of PTSD, Suicidality, and Other Mental Health Diagnoses](/posts/tbi_pre_post/). Journal of neurotrauma, 8977151251414145.
 
-Dundas, N. E., Law, T., Brender, T., **Mills, H.**, Espejo, E., A Heintz, T., ... & Cobert, J. (2026). All That Shines Is Not Gold: Maintaining Scientific Rigor When Evaluating, Interpreting, and Reviewing Studies Using Large Language Models. Anesthesiology, 144(2), 272-288.
+Dundas, N. E., Law, T., Brender, T., **Mills, H.**, Espejo, E., A Heintz, T., ... & Cobert, J. (2026). [All That Shines Is Not Gold: Maintaining Scientific Rigor When Evaluating, Interpreting, and Reviewing Studies Using Large Language Models](https://pubmed.ncbi.nlm.nih.gov/41364426/). Anesthesiology, 144(2), 272-288.
 
 Mashlah, A., Marini, S., **Mills, H.**, Yahya, T., Radmanesh, F., Chalif, J., ... & Izzy, S. (2025). [Traumatic Spinal Cord Injury and Subsequent Risk of Developing Chronic Cardiovascular, Neurologic, Psychiatric, and Endocrine Disorders](/posts/tsci_long_effects/). JAMA Network Open, 8(11), e2541157-e2541157. 
 
