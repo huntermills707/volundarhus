@@ -32,6 +32,8 @@ title : "Resume"
 
 ## Publications
 
+Brender, T. D., Stumpf, N., Vossler, K., Kim, S., **Mills, H.**, Lee, A., ... & Cobert, J. (2026). [How ICU clinicians document ‘Futility’: A 10-year analysis of critical care notes using natural language processing notes](/posts/futility). Journal of Critical Care, 94, 155526.
+
 Cu, C., Heintz, T., Dundas, N., Farhan, H., **Mills, H.**, Lee, J., Williams, C., ... & Cobert, J. (2026) [Time and Motion Analysis of Controlled Substance Disposals: A Study of Workflows at a Single Center using Automated Dispensing Cabinets](/posts/time_and_motion/). Anesthesiology Open 1(1):p e0006.
 
 Farrand, E., Chung, A., Joshua, J., Dong, H., **Mills, H.**, Lee, A., ... & Butte, A. (2026). [Development and validation of a generalisable machine learning algorithm for identifying interstitial lung disease cohorts: a retrospective cohort study](/posts/ild_classifier_xuc/). EClinicalMedicine, 93.
