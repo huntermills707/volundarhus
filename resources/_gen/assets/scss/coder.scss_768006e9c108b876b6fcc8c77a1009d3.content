@@ -10545,7 +10545,7 @@ strong {
 
 pre {
   display: block;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-family: "SF Mono", Consolas, Liberation Mono, Menlo, monospace;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.6rem;
@@ -10559,7 +10559,7 @@ pre {
     color: inherit; }
 
 code {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-family: "SF Mono", Consolas, Liberation Mono, Menlo, monospace;
   font-size: 1.6rem;
   font-weight: 400;
   border-radius: 0.6rem;
@@ -10655,7 +10655,8 @@ figure {
   flex: 1;
   display: flex;
   margin-top: 1.6rem;
-  margin-bottom: 3.2rem; }
+  margin-bottom: 3.2rem;
+  z-index: 0; }
   @media only screen and (max-width: 768px) {
     .content {
       margin-top: 1rem;
@@ -10901,6 +10902,7 @@ figure {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.6);
+  z-index: 2;
   height: 6rem;
   width: 100%; }
   .navigation a,
@@ -10925,7 +10927,6 @@ figure {
         position: relative;
         top: 2rem;
         right: 0;
-        z-index: 5;
         visibility: hidden;
         opacity: 0;
         padding: 0;
