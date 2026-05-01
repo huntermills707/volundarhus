@@ -2,7 +2,7 @@
 draft = false
 date = 2024-08-26T19:49:14-08:00
 title = "'My Mom Is a Fighter' A Qualitative Analysis of the Use of Combat Metaphors in ICU Clinician Notes"
-description = ""
+description = "A qualitative analysis of combat metaphors in over 200,000 ICU notes. Nearly 6,000 validated metaphors fell into identity frames (patient as fighter) and process frames (fighting the ventilator). While often well-intentioned, these metaphors can disempower families, justify invasive interventions, and obscure prognostic realities. The post discusses how NLP lexicons built from FrameNet can support downstream bias detection, sentiment analysis, and real-time documentation alerts in clinical text pipelines."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

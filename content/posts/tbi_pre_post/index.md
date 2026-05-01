@@ -2,7 +2,7 @@
 draft = false
 date = 2026-02-13T20:01:25-08:00
 title = "Civilian Traumatic Brain Injury Is Associated with Longitudinally Increased Risk of PTSD, Suicidality, and Other Mental Health Diagnoses"
-description = ""
+description = "A study comparing TBI patients to orthotrauma and unexposed controls found PTSD and suicidality were the most robust TBI-specific mental health sequelae. Using pre- and post-index tracking across six UC centers, TBI showed post-injury suicidality hazard ratios up to 6.17, peaking at 6-12 months. The differential risk versus orthotrauma suggests brain-specific pathology beyond general trauma stress. The authors recommend universal mental health screening embedded into trauma pathways, with targeted interventions during the first post-injury year."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

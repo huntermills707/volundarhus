@@ -2,7 +2,7 @@
 draft = false
 date = 2025-09-29T20:22:40-08:00
 title = "Monitoring atopic dermatitis using mobile-app based photography and surveys"
-description = ""
+description = "A summary of a mobile-app study for atopic dermatitis remote monitoring. Twenty-eight volunteers completed an eight-week hybrid trial using smartphone photos, patient-reported outcomes, and Apple Watch data. Intraclass correlation coefficients between app and clinician-assessed EASI scores exceeded 0.90, with 97.6% photo compliance. The post discusses what worked (blur detection, phone check-ins) and what did not (voice diary, watch irritation), and argues that well-engineered remote photography can reduce trial costs and expand geographic reach."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

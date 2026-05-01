@@ -2,7 +2,7 @@
 draft = false
 date = 2025-11-04T16:51:48-08:00
 title = "Traumatic Spinal Cord Injury and Subsequent Risk of Developing Chronic Cardiovascular, Neurologic, Psychiatric, and Endocrine Disorders"
-description = ""
+description = "This JAMA Network Open study links traumatic spinal cord injury to elevated long-term risks of cardiovascular, neurologic, psychiatric, and endocrine disorders. Across over 2,700 TSCI patients and 8,200 matched controls from two health systems, hazard ratios ranged from two- to six-fold for conditions including hypertension, depression, seizures, and pituitary dysfunction. The 14% versus 10% mortality gap underscores the need for early, multidisciplinary screening and proactive chronic disease management well beyond acute rehabilitation."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

@@ -2,7 +2,7 @@
 draft = false
 date = 2024-02-21T12:55:23-08:00
 title = "Leveraging electronic health records and knowledge networks for Alzheimer's disease prediction and sex-specific biological insights"
-description = ""
+description = "This post summarizes a Nature Aging study predicting Alzheimer's disease up to seven years before diagnosis using routine EHR data and a biomedical knowledge graph. Random forest models achieved AUROC 0.90 near diagnosis and 0.72 at seven years. Sex-stratified analyses revealed divergent risk profiles, with osteoporosis and major depression female-specific, and chest pain male-specific. Integrating the SPOKE knowledge graph linked predictors to genes like APOE and IL6, translating statistics into biologically plausible hypotheses."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

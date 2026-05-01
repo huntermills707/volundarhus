@@ -2,7 +2,7 @@
 draft = false
 date = 2025-07-16T12:54:28-08:00
 title = "Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses Following Dementia in a Large Electronic Medical Record System"
-description = ""
+description = "This post summarizes a study of 5,965 UCSF patients that found roughly one in seven dementia patients later receives a mild cognitive impairment diagnosis, suggesting systematic over-diagnosis or coding inconsistencies. Using group LASSO and random forests, the team identified younger age, Spanish-language preference, and certain comorbidities as reversion predictors. The work highlights the need for structured follow-up protocols, standardized cognitive assessments, and language-concordant care to reduce diagnostic instability in dementia pathways."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

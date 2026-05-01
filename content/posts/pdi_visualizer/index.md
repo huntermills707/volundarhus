@@ -2,7 +2,7 @@
 draft = false
 date = 2026-02-23T17:34:46-08:00
 title = "Visualizing Social Determinants of Health at the County Level"
-description = ""
+description = "A post showcasing a Plotly/Dash visualizer for exploring county-level deprivation indexes and CDC health outcomes side by side. Features include synchronized choropleth maps, state selectors, and hover-over details. The tool lets users juxtapose the Principled Deprivation Index against conditions like stroke or diabetes prevalence to surface geographic disparities. It is positioned as a lightweight starting point for public-health analysts and policymakers who want to explore social determinants of health without wading through spreadsheets."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

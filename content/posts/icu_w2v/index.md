@@ -2,7 +2,7 @@
 draft = false
 date = 2024-06-01T20:19:22-08:00
 title = "Measuring Implicit Bias in ICU Notes Using Word-Embedding Neural Network Models"
-description = ""
+description = "This study uses Word2Vec embeddings to measure implicit racial bias in nearly 1.3 million ICU notes from UCSF and MIMIC-III. Cosine similarity between race descriptors and stigmatizing themes varied by institution and era: Black descriptors aligned closer to violent language in older Boston data but less so in newer San Francisco records. The authors argue that unsupervised NLP pipelines inherit these biases and call for embedding-based benchmarks to guide debiasing interventions."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

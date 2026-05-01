@@ -2,7 +2,7 @@
 draft = false
 date = 2026-02-16T18:16:38-08:00
 title = "Principled Deprivation Index – A Julia‑Powered, GLRM‑Based Social Metric"
-description = ""
+description = "An introduction to the Principled Deprivation Index, a socioeconomic metric built with a constrained Generalized Low Rank Model instead of traditional PCA. By enforcing non-negativity and using Huber loss, the PDI tolerates missing data and resists outlier distortion. The post outlines a five-stage pipeline integrating Census, crime, food access, and FEMA data, then validates the index against CDC PLACES health outcomes. Future directions include an interactive dashboard, GPU-accelerated solvers, and open-source packaging."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

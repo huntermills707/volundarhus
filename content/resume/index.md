@@ -2,6 +2,7 @@
 date : '2026-02-05T09:18:10-08:00'
 draft : false
 title : "Resume"
+description: "The resume of Hunter Mills, detailing his career as a Machine Learning Engineer across UCSF, Syntegra, LifeBell AI, and NASA. It includes his education at Stanford and Sonoma State, certifications in AI and Machine Learning from ColumbiaX, and an extensive list of peer-reviewed publications in journals such as JAMA Network Open, Nature Aging, and Chest."
 ---
 
 ## Experience

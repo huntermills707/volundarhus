@@ -2,7 +2,7 @@
 draft = false
 date = 2023-01-24T10:29:22-08:00
 title = "Electrocardiogram Detection of Pulmonary Hypertension Using Deep Learning"
-description = ""
+description = "This post summarizes a deep-learning study that detects pulmonary hypertension from standard 12-lead ECGs with AUC approximately 0.89. Trained on 24,470 UCSF patients, a one-dimensional ResNet flags PH up to two years before conventional diagnosis and discriminates subtypes including pre-capillary and WHO Group 1 disease. Even a single lead retained useful performance, opening the door to wearable screening. The authors discuss implications for primary care triage, resource-limited settings, and continuous remote monitoring."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

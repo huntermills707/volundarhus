@@ -2,7 +2,7 @@
 draft = false
 date = 2026-04-05T19:52:47-07:00
 title = "Stratified Word Embeddings with Patient and Provider Metadata"
-description = ""
+description = "A technical post introducing FastTextContext, a C++ extension of FastText that learns patient and provider metadata embeddings jointly with word vectors. By concatenating word, patient, and provider representations through a shared projection matrix, the model produces stratified clinical embeddings that shift based on demographics and care setting. The post details the architecture, hierarchical softmax loss, Hogwild plus synchronized-averaging optimization, and applications to MIMIC-III for studying documentation disparities and care-pathway variation."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

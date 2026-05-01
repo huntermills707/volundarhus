@@ -2,6 +2,7 @@
 date = '2026-02-07T21:40:37-08:00'
 draft = false
 title = 'About'
+description = "Hunter Mills is a Machine-Learning Engineer with a decade of experience building clinical AI pipelines, edge computer-vision models, and synthetic patient datasets. He holds a master's from Stanford and a double-major in Physics and Mathematics from Sonoma State. His research appears in top journals spanning pulmonary hypertension detection, TBI risk quantification, and survival analysis. Beyond tech, he gardens, plays tabletop RPGs, and crafts generative music."
 +++
 
 Hey, I’m Hunter, a Machine‑Learning Engineer who’s spent the better part of a decade turning data into actionable insight. I grew up in the Bay Area, earned a master’s in Computational & Mathematical Engineering at Stanford, and a double‑major bachelor’s in Physics and Mathematics from Sonoma State. Those studies gave me a solid grounding in quantitative thinking, which I’ve applied across academia, industry, and even a few space‑related projects.

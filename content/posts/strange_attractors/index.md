@@ -2,7 +2,7 @@
 draft = false
 date = 2026-02-17T14:16:34-08:00
 title = "Strange Attractors: Building a Living Mathematical Background"
-description = ""
+description = "A post about the real-time strange-attractor visualization running on the author's Hugo site. Built in vanilla JavaScript and rendered to HTML5 Canvas, the simulation iterates deterministic chaotic equations point-by-point at 60fps, producing unique trajectories on every page load. The author describes the modular architecture, Hugo integration techniques, and the appeal of deterministic unpredictability as a living portfolio backdrop."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

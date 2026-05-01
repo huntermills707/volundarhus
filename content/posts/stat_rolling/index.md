@@ -2,7 +2,7 @@
 draft = false
 date = 2026-03-10T08:22:41-07:00
 title = "Beyond the Roll: Deep Dive into Rolling Stat Generation in TTRPGs"
-description = ""
+description = "An expanded follow-up to the dice-rolling post, introducing full stat-generation workflows with modification rules. The updated Dash app enumerates exact joint probability distributions for sets of ability scores, supporting drop-lowest, replace-floor, and custom die faces. The post discusses TTRPG design implications such as preventing broken characters, avoiding power-creep traps, and finding the sweet spot between mean and variance. It also peeks under the hood at the combinatorial enumeration code."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

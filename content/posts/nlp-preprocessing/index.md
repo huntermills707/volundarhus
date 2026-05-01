@@ -2,7 +2,7 @@
 draft = false
 date = 2021-06-11T20:42:18-08:00
 title = "Impact of Different Approaches to Preparing Notes for Analysis With Natural Language Processing on the Performance of Prediction Models in Intensive Care"
-description = ""
+description = "This study evaluates how text-preprocessing choices affect ICU mortality-prediction performance. Testing raw, cleaned, stemmed, TF-IDF, and n-gram pipelines across logistic regression, neural networks, and random forests, TF-IDF consistently delivered the highest AUROC gains. The advantage persisted across all three algorithm families, suggesting the benefit stems from representation rather than architecture. The practical recommendation: adopt at least cleaning plus TF-IDF (optionally with n-grams) as a computationally cheap but effective baseline for clinical note modeling."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

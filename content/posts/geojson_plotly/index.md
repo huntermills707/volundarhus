@@ -2,7 +2,7 @@
 draft = false
 date = 2026-02-21T19:44:23-08:00
 title = "Updating Plotly’s Choropleth Example with Current US Census Data"
-description = ""
+description = "A tutorial updating Plotly's official choropleth example with current U.S. Census data. It explains GeoJSON basics, shows how to download and convert TIGER/Line shapefiles using GeoPandas, and demonstrates how to fetch unemployment rates from the American Community Survey API. The final script merges geometry and data, adds FIPS identifiers, and produces an interactive county-level map. The goal is to keep geographic visualizations accurate as boundaries and statistics evolve."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

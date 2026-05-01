@@ -2,7 +2,7 @@
 draft = false
 date = 2026-03-04T20:35:11-08:00
 title = "Dice‑Rolling Probabilities in TTRPGs – Why a Little Math Makes Your Game Feel Fairer (and More Fun)"
-description = ""
+description = "A deep dive into tabletop RPG dice mechanics using a custom Plotly Dash app. The post analyzes classic methods like 3d6 and 4d6 drop lowest, showing how means, variances, and distribution shapes affect character balance. It also explores custom cheat dice, scaling pools toward Gaussian convergence, and practical GM workflows. The core message: visualizing probability curves before adopting house rules prevents campaign-breaking imbalances and keeps randomness fun rather than frustrating."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

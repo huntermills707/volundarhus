@@ -2,7 +2,7 @@
 draft = false
 date = 2024-11-19T12:16:57-08:00
 title = "Unclear Trajectory and Uncertain Benefit: Creating a Lexicon for Clinical Uncertainty in Patients with Critical or Advanced Illness Using a Delphi Consensus Process"
-description = ""
+description = "This post summarizes a JAMA Network Open publication that developed a standardized lexicon of 44 uncertainty expressions for critical care. Using a five-round Delphi consensus process, physicians rated candidate terms until reaching strong agreement. The final lexicon captures hedges, probabilistic cues, and explicit doubt. Thematic analysis revealed clinicians use uncertainty language both to communicate with colleagues and families and to think through their own reasoning. The authors outline how natural language processing pipelines can now automatically detect uncertainty in clinical notes, enabling research into its relationship with testing, costs, and outcomes."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

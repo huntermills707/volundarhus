@@ -2,7 +2,7 @@
 draft = true
 date = 2026-02-11T20:41:22-08:00
 title = "All That Shines Is Not Gold: Maintaining Scientific Rigor When Evaluating, Interpreting, and Reviewing Studies Using Large Language Models"
-description = ""
+description = "A concise summary of principles for maintaining scientific rigor when using large language models in research. Key practices include methodological transparency, secure handling of protected health information, quantitative validation with objective metrics, active bias auditing, and clear documentation of computational resources. The post highlights core challenges such as black-box opacity, hallucinations, and rapid technological obsolescence, urging researchers and reviewers to ensure LLM-driven studies remain valid, reproducible, and clinically useful."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

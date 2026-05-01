@@ -2,7 +2,7 @@
 draft = false
 date = 2026-03-17T17:33:25-07:00
 title = "Time and Motion Analysis of Controlled Substance Disposals: A Study of Workflows at a Single Center using Automated Dispensing Cabinets"
-description = ""
+description = "A time-and-motion study of 55 controlled substance disposals at a VA medical center revealed that the honor-system workflow is broken: 80% of disposals lacked independent verification, 38% did not show the syringe or volume to the witness, and wait times for witnesses ranged up to nine minutes. Despite this, 71% of clinicians believed diversion remained possible. The post argues for computer-vision-based automated verification and real-time anomaly detection to replace manual witnessing with intelligent accountability."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []

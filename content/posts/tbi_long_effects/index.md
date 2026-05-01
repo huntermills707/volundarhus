@@ -2,7 +2,7 @@
 draft = false
 date = 2024-12-12T20:08:52-08:00
 title = "Traumatic Brain Injury and Risk of Incident Comorbidities"
-description = ""
+description = "This post summarizes a JAMA Network Open analysis linking TBI to elevated long-term risks across neurological, psychiatric, cardiovascular, and endocrine domains. In a cohort of 20,400 patients, hazard ratios exceeded 2.0 for depression, suicidality, seizure disorder, and dementia, with effects persisting up to a decade. Middle-aged patients showed the highest suicidality risk, while neighborhood disadvantage amplified certain psychiatric outcomes. The authors argue TBI should be treated as a chronic condition requiring longitudinal, multidisciplinary follow-up."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []
