@@ -8,6 +8,14 @@ math: true
 description: "A technical post presenting a Python module that brings Stata-style marginal effects to StatsModels. Using a unified delta-method framework with numerical Jacobians, the module computes average and representative-value predictions, marginal effects, and discrete contrasts for any GLM-family model. It leverages patsy to handle polynomials, interactions, and splines correctly, and includes a difference-in-differences helper for nonlinear models. The whole implementation fits in roughly 500 lines."
 ---
 
+> **Archived.** The module described here grew into the **smmargins**
+> package, which has since been superseded by **pymargins** — a
+> ground-up redesign with JAX-native autodiff, a κ curvature diagnostic,
+> unified delta/simulation/bootstrap inference, and many more model
+> backends. The write-up below is kept for the math and design notes,
+> but new development happens on pymargins. See [pymargins: A Ground-Up
+> Redesign of Marginal Effects for Python]({{< ref "pymargins_package" >}}).
+
 If you've ever moved from Stata to Python and reached for `margins, dydx(*) at(age=(25 45 65))`, you know the feeling. StatsModels has `get_margeff`, but it's narrow: average or at-means, continuous variables, a couple of model classes. The moment you want a marginal effect *at a specific covariate profile*, or a discrete change for a factor, or a difference-in-differences on the probability scale of a logit, you're on your own.
 
 So I wrote a small module — [`marginal_effects.py`](#) — that fills in the gap. This post is a tour of what it does, the math that makes it work, and the design decisions that kept it small.

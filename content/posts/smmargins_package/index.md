@@ -7,6 +7,13 @@ categories = ["open-source", "Statistics"]
 summary = "A new Python package bringing Stata's margins command to the StatsModels ecosystem."
 +++
 
+> **Archived.** smmargins has been superseded by **pymargins**, a
+> ground-up redesign with JAX-native autodiff, a κ curvature diagnostic,
+> unified delta/simulation/bootstrap inference, and many more model
+> backends. smmargins still works, but new development happens on
+> pymargins. See [pymargins: A Ground-Up Redesign of Marginal Effects
+> for Python]({{< ref "pymargins_package" >}}).
+
 If you've used Stata's `margins` command and then tried to replicate the same analysis in Python, you know the gap. StatsModels has `get_margeff()`, but it covers a fraction of what `margins` does. I just released **smmargins** to close that gap.
 
 ## The Problem
