@@ -21,7 +21,7 @@ style = "github-dark"
 
 [params]
   author = "Hunter Mills"
-  info = "ML Engineer | Data Scientist | Mentor | Tinkerer"
+  info = "Data Scientist | ML Engineer | Mentor | Tinkerer"
   description = "Hunter Mills' personal website"
   keywords = "blog,developer,personal"
   avatarurl = "images/Hunter_Mills.png"
