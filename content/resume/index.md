@@ -55,9 +55,9 @@ Miramontes, S., Khan, U., Zimmerman, S., Ferguson, E. L., **Mills, H.**, Oskotsk
 
 Yang, H. Y., Raghunathan, K., Widera, E., Pantilat, S. Z., Brender, T., Heintz, T. A., …, **Mills, H.** ... & Cobert, J. (2025). [Lexical associations can characterize clinical documentation trends related to palliative care and metastatic cancer](/posts/lexcial_assoc_palliative_metastatic/). Scientific Reports, 15(1), 17245.
 
-Halabi, C., Izzy, S., DiGiorgio A. M., **Mills, H.**, Radmanesh, F., Yue, J. K., … Zafonte, R., & Manley, G. T. (2024).  [Traumatic Brain Injury and Risk of Incident Comorbidities](/posts/tbi_long_effects/). JAMA Network Open, 7(12), e2450499-e2450499.
-
 McGowan, S. K., Corrales-Martinez, M. J., Brender, T., Smith, A. K., Kim, S., Harrison, K. L., **Mills, H.**, ... & Cobert, J. (2025). [Unclear Trajectory and Uncertain Benefit: Creating a Lexicon for Clinical Uncertainty in Patients with Critical or Advanced Illness Using a Delphi Consensus Process](/posts/clinical_untertainy/). Medical Decision Making, 45(1), 34-44.
+
+Halabi, C., Izzy, S., DiGiorgio A. M., **Mills, H.**, Radmanesh, F., Yue, J. K., … Zafonte, R., & Manley, G. T. (2024).  [Traumatic Brain Injury and Risk of Incident Comorbidities](/posts/tbi_long_effects/). JAMA Network Open, 7(12), e2450499-e2450499.
 
 Cobert, J., Espejo, E., Boscardin, J., **Mills, H.**, Ashana, D., Raghunathan, K., Heintz, T. A., Chapman, A. C., Smith, A. K., & Lee, S. (2024). [Variation in Mentions of Race and Ethnicity in Notes in Intensive Care Units Across a Health Care System](/posts/race_mentions/). American journal of critical care: an official publication, American Association of Critical-Care Nurses, 33(6), 462–466.
 
