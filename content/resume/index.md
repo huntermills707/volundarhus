@@ -28,6 +28,8 @@ description: "The resume of Hunter Mills, detailing his career as a Machine Lear
 
 |   | Organization | Certificate | Date |
 |---|--------------|-------------|------|
+| ![Coursera/Duke](duke.png) | Coursera/Duke | [Machine Learning Operations ](https://coursera.org/share/e9cb64bcd6611f0424ed943a47363c9c) | 2026 |
+| ![Boot.Dev](bootdev.png) | Boot.Dev | [Backend Developer](https://www.boot.dev/certificates/eba5f6ae-e845-4805-963c-e74026fa7b8c) | 2026 |
 | ![ColumbiaX](columbiaX.png) | ColumbiaX | [CSMM101x: Artificial Intelligence](https://courses.edx.org/certificates/1f3730dd6dd74bc0af92c2e0453d70f9) | 2017 |
 | ![ColumbiaX](columbiaX.png) | ColumbiaX | [CSMM.102x: Machine Learning](https://courses.edx.org/certificates/407dd5d97e074aca8b354a06dd7c5cf8) | 2017 |
 
