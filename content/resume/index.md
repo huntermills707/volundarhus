@@ -10,7 +10,7 @@ description: "The resume of Hunter Mills, detailing his career as a Machine Lear
 |   | Company | Role | Dates | Location |
 |---|---------|------|-------|----------|
 | ![Stealth Logo](stealth.png) | Stealth Mode Startup | Senior Machine Learning Engineer | 2025 – Present | San Francisco, CA |
-| ![UCSF Logo](ucsf.png) | UCSF | Senior Data Scientist | 2022 – 2025 | San Francisco, CA |
+| ![UCSF Logo](ucsf.png) | UCSF | Senior Machine Learning Engineer | 2022 – 2025 | San Francisco, CA |
 | ![Syntegra Logo](syntegra.png) | Syntegra | Machine   Learning Engineer | 2021 – 2022 | San Francisco, CA |
 | ![LifeBell AI Logo](lifebell_ai.png) | LifeBell AI | Lead Data   Scientist | 2020 – 2021 | Remote Atlanta, GA |
 | ![UCSF Logo](ucsf.png) | UCSF | Data Scientist | 2018 – 2020 | San Francisco, CA |
