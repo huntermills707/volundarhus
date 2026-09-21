@@ -360,10 +360,18 @@ function preload() {
 
 function saveState() {
   const canvas = document.querySelector('canvas.backgroundsketch');
+  const now = millis();
   const state = {
     savedAt: Date.now(),
     image: canvas ? canvas.toDataURL() : null,
-    points: points.map(p => ({ x: p.x, y: p.y, z: p.z, age: millis() - p.birth }))
+    points: points.map(p => ({
+      x: p.x,
+      y: p.y,
+      z: p.z,
+      age: now - p.birth,
+      // [sx, sy, sz, segment age at save time]
+      trail: p.trail.map(e => [Math.round(e.sx), Math.round(e.sy), Math.round(e.sz), now - e.t])
+    }))
   };
   try {
     sessionStorage.setItem(STATE_KEY, JSON.stringify(state));
@@ -377,16 +385,26 @@ function saveState() {
 function restoreState() {
   if (!pendingState) return;
 
-  // Repaint the previous frame so trails don't visibly reset.
+  // Repaint the previous frame so the canvas doesn't visibly reset.
   if (restoredImage) image(restoredImage, 0, 0, width, height);
 
-  // Recreate points, fast-forwarding their ages by the time between pages.
+  // Recreate points and their trails. Point ages are fast-forwarded by
+  // the time spent between pages; trail segment ages are frozen so the
+  // tails resume exactly as shown in the restored snapshot.
+  const now = millis();
   const elapsed = Date.now() - pendingState.savedAt;
   points = pendingState.points
     .filter(s => s.age + elapsed < CONFIG.pointLife)
     .map(s => {
       const p = new Point(s.x, s.y, s.z);
-      p.birth = millis() - (s.age + elapsed);
+      p.birth = now - (s.age + elapsed);
+      if (s.trail) {
+        const kept = s.trail
+          .filter(e => e[3] < CONFIG.trailLife)
+          .map(e => ({ sx: e[0], sy: e[1], sz: e[2], t: now - e[3] }));
+        // Keep the constructor's fresh head entry last.
+        p.trail = kept.concat(p.trail);
+      }
       return p;
     });
   pendingState = null;
