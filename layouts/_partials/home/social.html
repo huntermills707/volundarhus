@@ -1,5 +1,5 @@
 {{ with .Site.Params.social }}
-<ul style="backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);padding: 1em;">
+<ul class="social-card">
   {{ range sort . "weight" }}
     {{ if .icon }}
       <li>

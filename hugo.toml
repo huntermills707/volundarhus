@@ -1,9 +1,8 @@
-baseURL = 'www.voulundarhus.com'
-languageCode = 'en-us'
+baseURL = 'https://volundarhus.com/'
 title = "Volundarhus"
 theme = "hugo-coder"
-languagecode = "en"
-defaultcontentlanguage = "en"
+locale = "en-US"
+defaultContentLanguage = "en"
 
 [caches]
   [caches.images]
@@ -11,10 +10,6 @@ defaultcontentlanguage = "en"
 
 [pagination]
 pagerSize = 20
-
-[services]
-[services.disqus]
-#shortname = "yourdiscussshortname"
 
 [markup.highlight]
 style = "github-dark"
@@ -38,9 +33,8 @@ style = "github-dark"
   colorScheme = "dark"
   hidecolorschemetoggle = true
 
-  # customCSS = ["css/custom.css"]
-  # customSCSS = ["scss/custom.scss"]
-  customJS = ["js/mysketch.js","js/p5.min.js" ]
+  customSCSS = ["scss/custom.scss"]
+  customJS = ["js/mysketch.js", "js/p5.min.js"]
 
 [taxonomies]
   category = "categories"

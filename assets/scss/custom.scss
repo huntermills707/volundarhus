@@ -1,0 +1,125 @@
+// Volundarhus custom styles: frosted-glass panels floating over the
+// animated p5.js backdrop (assets/js/mysketch.js).
+
+@mixin frosted-panel {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); // Safari
+  box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
+}
+
+// Site background matches the p5.js backdrop (rgb(30, 45, 71) in mysketch.js).
+body.colorscheme-dark {
+  background-color: #1e2d47;
+
+  // Mobile dropdown menu.
+  .navigation .navigation-list {
+    @media only screen and (max-width: 768px) {
+      background-color: #1e2d47;
+    }
+  }
+}
+
+// Full-viewport fixed canvas for the animated backdrop.
+canvas.backgroundsketch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+// Home page panels (layouts/_partials/home/*.html).
+.about-info {
+  @include frosted-panel;
+  padding: 0.05em 1em 1em;
+}
+
+.social-card {
+  @include frosted-panel;
+  padding: 1em;
+}
+
+.avatar img {
+  box-shadow: 1em 1.5em 2em rgba(0, 0, 0, 0.6);
+}
+
+// Header and footer float over the backdrop.
+.navigation {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.6);
+  z-index: 2;
+
+  .navigation-list {
+    @media only screen and (max-width: 768px) {
+      z-index: auto;
+    }
+  }
+}
+
+.footer {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+// Content panels.
+.content {
+  z-index: 0;
+
+  header {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+
+    h1 {
+      margin: 2rem 1rem 0 1.6rem;
+    }
+  }
+
+  article {
+    @include frosted-panel;
+    padding: 1.6rem;
+  }
+}
+
+.list {
+  @include frosted-panel;
+  padding: 1.6rem;
+}
+
+.centered .error {
+  @include frosted-panel;
+  padding: 1em;
+}
+
+// Tighter headings.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2rem 1rem 0 3.2rem;
+}
+
+// Borderless, centered tables (dark scheme).
+body.colorscheme-dark {
+  table {
+    margin-left: 1.2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  table td,
+  table th {
+    border: none;
+  }
+
+  table tr:first-child th {
+    border-bottom: 1px solid #4f4f4f;
+    width: 15%;
+  }
+}
