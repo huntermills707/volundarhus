@@ -338,6 +338,81 @@ let lastMouseSpawn = 0;        // timestamp of last mouse‑spawn
 let lastEdgeSpawn = 0;         // timestamp of last edge‑spawn
 
 // ----------------------------------------------------------
+// Persistence across page navigations (sessionStorage)
+// ----------------------------------------------------------
+const STATE_KEY = 'backgroundsketch-state';
+let pendingState = null;
+let restoredImage = null;
+
+try {
+  pendingState = JSON.parse(sessionStorage.getItem(STATE_KEY));
+} catch (e) {
+  pendingState = null;
+}
+
+// p5 hook: runs (and blocks) before setup(), so the snapshot can be
+// painted synchronously as the first frame.
+function preload() {
+  if (pendingState && pendingState.image) {
+    restoredImage = loadImage(pendingState.image);
+  }
+}
+
+function saveState() {
+  const canvas = document.querySelector('canvas.backgroundsketch');
+  const now = millis();
+  const state = {
+    savedAt: Date.now(),
+    image: canvas ? canvas.toDataURL() : null,
+    points: points.map(p => ({
+      x: p.x,
+      y: p.y,
+      z: p.z,
+      age: now - p.birth,
+      // [sx, sy, sz, segment age at save time]
+      trail: p.trail.map(e => [Math.round(e.sx), Math.round(e.sy), Math.round(e.sz), now - e.t])
+    }))
+  };
+  try {
+    sessionStorage.setItem(STATE_KEY, JSON.stringify(state));
+  } catch (e) {
+    // Likely quota — retry without the canvas snapshot.
+    state.image = null;
+    try { sessionStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch (e2) { /* give up */ }
+  }
+}
+
+function restoreState() {
+  if (!pendingState) return;
+
+  // Repaint the previous frame so the canvas doesn't visibly reset.
+  if (restoredImage) image(restoredImage, 0, 0, width, height);
+
+  // Recreate points and their trails. Point ages are fast-forwarded by
+  // the time spent between pages; trail segment ages are frozen so the
+  // tails resume exactly as shown in the restored snapshot.
+  const now = millis();
+  const elapsed = Date.now() - pendingState.savedAt;
+  points = pendingState.points
+    .filter(s => s.age + elapsed < CONFIG.pointLife)
+    .map(s => {
+      const p = new Point(s.x, s.y, s.z);
+      p.birth = now - (s.age + elapsed);
+      if (s.trail) {
+        const kept = s.trail
+          .filter(e => e[3] < CONFIG.trailLife)
+          .map(e => ({ sx: e[0], sy: e[1], sz: e[2], t: now - e[3] }));
+        // Keep the constructor's fresh head entry last.
+        p.trail = kept.concat(p.trail);
+      }
+      return p;
+    });
+  pendingState = null;
+}
+
+window.addEventListener('pagehide', saveState);
+
+// ----------------------------------------------------------
 // Helper maths (identical to original)
 // ----------------------------------------------------------
 function project(x, y, z) {
@@ -561,8 +636,8 @@ function setup() {
   myCanvas.class('backgroundsketch');
   // Use a dark background that slowly fades (same colour as original)
   background(30, 45, 71);
-  // No continuous looping of `draw()` until we add points – but we want it always running.
-  // So nothing special here.
+  // Pick up where the previous page left off, if possible.
+  restoreState();
 }
 
 function draw() {
