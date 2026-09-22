@@ -14,17 +14,17 @@ series = []
 
 ## Why Look at Words, Not Just Numbers?
 
-When you sift through millions of electronic health‑record notes, the obvious data points—diagnosis codes, lab values, medication lists—are easy to count. What’s harder to capture is how clinicians talk about a patient’s condition. That language can betray shifting attitudes, workflow pressures, or emerging standards of care. In a new Scientific Reports article, we show exactly how a simple word‑embedding model can surface those hidden trends.
+When you sift through millions of electronic health-record notes, the obvious data points (diagnosis codes, lab values, medication lists) are easy to count. What’s harder to capture is how clinicians talk about a patient’s condition. That language reflects shifting attitudes, workflow pressures, and changing standards of care. In a new Scientific Reports article, we show that even a simple word-embedding model can pick up those trends.
 
 ## The Core Idea: Word2Vec Meets the Ward
 
-We fed every inpatient note from 2013‑2020 (over 28 million entries) into a series of Word2Vec models—one per year. Word2Vec turns each token into a high‑dimensional vector, preserving its contextual relationships. By computing cosine similarity between vectors for “metastatic” terms and “palliative‑care” terms, they quantified how tightly the two vocabularies were bound together in everyday documentation.
+We fed every inpatient note from 2013-2020, over 28 million notes, into a series of Word2Vec models, one per year. Word2Vec turns each token into a high-dimensional vector that encodes its context. Computing the cosine similarity between vectors for “metastatic” terms and “palliative-care” terms then quantifies how tightly the two vocabularies were linked in everyday documentation.
 
 ## What Did We Find?
 
-* **Positive baseline similarity:** Across all years, metastatic and palliative terms co‑occurred more often than random chance, confirming that clinicians routinely discuss both in the same chart.
+* **Positive baseline similarity:** Across all years, metastatic and palliative terms co-occurred more often than random chance, confirming that clinicians routinely discuss both in the same chart.
 * **A slow drift apart:** Linear regression revealed a modest decline in similarity, most pronounced for the noun “palliation.” The drop was statistically significant, suggesting a real change in phrasing rather than noise.
-* **Robustness checks:** When the analysis was limited to patients with a confirmed metastatic‑cancer ICD code, the same downward trend persisted, albeit with larger confidence intervals (fewer notes, more variability).
+* **Robustness checks:** When the analysis was limited to patients with a confirmed metastatic-cancer ICD code, the same downward trend persisted, albeit with larger confidence intervals (fewer notes, more variability).
 
 |Terms over Time|
 |:---:|
@@ -33,15 +33,15 @@ We fed every inpatient note from 2013‑2020 (over 28 million entries) into a se
 ## Interpreting the Drift
 We need to be careful not to equate lexical change with clinical practice change. A weaker lexical bond could mean:
 
-1. **Documentation fatigue:** Clinicians may be using shorthand or omitting palliative‑care language as they become accustomed to standard pathways.
+1. **Documentation fatigue:** Clinicians may be using shorthand or omitting palliative-care language as they become accustomed to standard pathways.
 2. **Shift to “primary” palliative care:** More of the palliative work may be happening within primary services, where the term “palliative” is used less explicitly.
-3. **Evolving terminology:** New therapies and care models (e.g., immunotherapy) might push the conversation toward disease‑specific language rather than generic “palliative” descriptors.
+3. **Evolving terminology:** New therapies and care models (e.g., immunotherapy) might push the conversation toward disease-specific language rather than generic “palliative” descriptors.
 
 ## Why This Matters for ML Engineers
 
-* **Proof of concept for unsupervised NLP:** Even a classic static embedding model can surface temporal semantic drift without any labeled data.
-* **Feature engineering insight:** When building predictive models from clinical text, relying solely on keyword presence may miss nuanced shifts; embedding‑based similarity can be a richer feature.
-* **Future directions:** Transformer‑based models (e.g., BERT) could capture context‑dependent meanings and perhaps detect more subtle drifts, especially in the era of “semantic shift” research.
+* **Proof of concept for unsupervised NLP:** Even a classic static embedding model can detect temporal semantic drift without any labeled data.
+* **Feature engineering insight:** When building predictive models from clinical text, relying solely on keyword presence may miss nuanced shifts; embedding-based similarity can be a richer feature.
+* **Future directions:** Transformer-based models (e.g., BERT) could capture context-dependent meanings and perhaps detect more subtle drifts, especially in the era of “semantic shift” research.
 
 ## Takeaways for the Healthcare Community
 
@@ -50,4 +50,4 @@ We need to be careful not to equate lexical change with clinical practice change
 * **Expand beyond the inpatient setting:** Outpatient and telehealth notes could reveal whether the trend is universal or confined to acute care environments.
 
 ## Bottom Line
-The study demonstrates that the *how* of note‑taking is as informative as the *what.* By tracking the ebb and flow of key terms, we gain a window into the evolving landscape of palliative‑care delivery for patients with metastatic cancer—without ever needing a single extra data field. For anyone building ML pipelines on EHR text, it’s a reminder: sometimes the most valuable signal lives in the spaces between the words.
+The main takeaway is that *how* notes are written carries as much information as *what* they contain. Tracking term similarity over time gives us a cheap, label-free way to watch palliative-care documentation for metastatic cancer patients change, no extra data fields required. If you build ML pipelines on EHR text, that drift matters: a model trained on 2013 language is not quite seeing the 2020 version of the same chart.

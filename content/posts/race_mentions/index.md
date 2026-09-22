@@ -2,7 +2,7 @@
 draft = false
 date = 2024-11-01T19:43:07-08:00
 title = "Variation in Mentions of Race and Ethnicity in Notes in Intensive Care Units Across a Health Care System "
-description = "A study of 292,457 ICU notes from 5,573 patients found that Black patients were more than twice as likely as White patients to have race or ethnicity mentioned in their charts, even after adjusting for patient, note, and clinician characteristics. Asian patients had the lowest mention rate. The authors note that social construct documentation has consequences for clinician-patient relationships and for algorithms trained on clinical text, calling attention to documentation equity."
+description = "A study of 292,457 ICU notes from 5,573 patients found that Black patients were more than twice as likely as White patients to have race or ethnicity mentioned in their charts, even after adjusting for patient, note, and clinician characteristics. Asian patients had the lowest mention rate. The authors flag the consequences for clinician-patient relationships and for algorithms trained on clinical text."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []
@@ -14,7 +14,7 @@ series = []
 
 
 ## Background
-Social constructs like race can affect how patients are perceived and impact care. This study investigated whether mentions of race in notes for critically ill patients differed according to patients' race.
+Social constructs like race shape how patients are perceived and how they are cared for. This study investigated whether mentions of race in notes for critically ill patients differed according to patients' race.
 
 ## Methods
 This retrospective cohort study included intensive care unit notes for adults (≥18 years old) admitted to any of 6 intensive care units at University of California, San Francisco, from 2012 through 2020. Notes were linked to National Provider Identifier records to obtain note writer characteristics. Logistic regression analysis with robust SEs clustered on note writers was adjusted for patient-, note- and clinician-level characteristics. Any race or ethnicity mention was the outcome of interest.

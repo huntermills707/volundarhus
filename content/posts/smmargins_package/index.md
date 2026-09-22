@@ -18,15 +18,15 @@ If you've used Stata's `margins` command and then tried to replicate the same an
 
 ## The Problem
 
-StatsModels' `get_margeff()` gives you marginal effects at the mean or overall—but that's where it stops. Stata's `margins` does far more: adjusted predictions at arbitrary covariate profiles, subgroup average marginal effects, elasticities, difference-in-differences, joint tests, simultaneous confidence intervals, and flexible specification of counterfactual scenarios.
+StatsModels' `get_margeff()` gives you marginal effects at the mean or overall, and that's where it stops. Stata's `margins` does far more: adjusted predictions at arbitrary covariate profiles, subgroup average marginal effects, elasticities, difference-in-differences, joint tests, simultaneous confidence intervals, and flexible specification of counterfactual scenarios.
 
-If you're migrating from Stata to Python—or just want that level of rigor without leaving your notebook—you were out of luck. Until now.
+If you're migrating from Stata to Python, or you just want that level of rigor without leaving your notebook, you were out of luck. Until now.
 
 ## Why Marginal Effects Matter
 
 Model coefficients live in abstract space. A logit coefficient tells you the change in log-odds per unit increase in a predictor. That's useful for fitting, but it's not what stakeholders care about.
 
-Marginal effects translate those coefficients into **natural terms**:
+Marginal effects translate those coefficients into natural terms:
 
 - "A 1-unit increase in income is associated with a 3.2 percentage point decrease in default probability"
 - "Treatment A increased outcomes by 1.8 units compared to treatment B, holding other factors constant"
@@ -112,7 +112,7 @@ Docs are at [smmargins.readthedocs.io](https://smmargins.readthedocs.io/en/lates
 
 ## Who Should Use This
 
-- **Economists and social scientists** migrating from Stata to Python
-- **Analysts** who need subgroup AMEs, DiD, or joint tests that `get_margeff()` doesn't provide
-- **Researchers** publishing with marginal effects who want reproducible Python workflows
-- **ML practitioners** who need to communicate model effects in stakeholder-friendly terms
+- Economists and social scientists migrating from Stata to Python
+- Analysts who need subgroup AMEs, DiD, or joint tests that `get_margeff()` doesn't provide
+- Researchers publishing with marginal effects who want reproducible Python workflows
+- ML practitioners who need to communicate model effects in stakeholder-friendly terms

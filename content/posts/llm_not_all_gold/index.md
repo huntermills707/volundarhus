@@ -2,7 +2,7 @@
 draft = true
 date = 2026-02-11T20:41:22-08:00
 title = "All That Shines Is Not Gold: Maintaining Scientific Rigor When Evaluating, Interpreting, and Reviewing Studies Using Large Language Models"
-description = "A concise summary of principles for maintaining scientific rigor when using large language models in research. Key practices include methodological transparency, secure handling of protected health information, quantitative validation with objective metrics, active bias auditing, and clear documentation of computational resources. The post highlights core challenges such as black-box opacity, hallucinations, and rapid technological obsolescence, urging researchers and reviewers to ensure LLM-driven studies remain valid, reproducible, and clinically useful."
+description = "A summary of principles for keeping scientific rigor when using large language models in research: methodological transparency, secure handling of protected health information, quantitative validation with objective metrics, active bias auditing, and clear reporting of computational resources. The core challenges are black-box opacity, hallucinations, and how fast the tooling goes stale."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []
@@ -13,21 +13,21 @@ series = []
 
 ## Why This Matters
 
-Maintaining scientific rigor when using Large Language Models (LLMs)requires strict attention to transparency, data privacy, and systematic evaluation to overcome "black box" limitations, potential biases, and hallucination risks. Key practices include disclosing training data, securing patient information (PHI), validating prompt strategies, and using quantitative metrics to assess accuracy and fairness. 
+Using Large Language Models (LLMs) in research creates a specific set of rigor problems: black-box behavior, embedded bias, and hallucination. Working around them takes discipline about transparency, data privacy, and evaluation. In practice that means disclosing training data, keeping protected health information (PHI) off public models, validating prompt strategies, and scoring outputs with quantitative metrics for accuracy and fairness instead of eyeballing a few good examples.
 
 ## Core Principles for Rigorous LLM Utilization:
 
-* **Methodological Transparency:** Researchers must document the specific model version, training data, and prompting strategies used.
-* **Data Privacy & Security:** Using external, public LLMs risks exposing protected health information (PHI). Studies must implement robust, local, or secure, de-identified data pipelines.
-* **Evaluation & Validation:** Rely on objective metrics (e.g., semantic similarity, accuracy, hallucination rates) rather than anecdotal results.
-* **Addressing Bias:** Actively audit and report on societal, cultural, or clinical biases embedded in the training data and generated outputs.
-* **Reproducibility:** Clearly document and report all computational resources and environmental impacts to ensure findings can be replicated.
-* **Explainability:** Favor techniques that make the model's decision-making process more transparent. 
+* **Methodological Transparency:** Document the specific model version, training data, and prompting strategies used.
+* **Data Privacy & Security:** Sending data to external, public LLMs risks exposing PHI. Studies need local or otherwise secured pipelines with de-identified data.
+* **Evaluation & Validation:** Use objective metrics (semantic similarity, accuracy, hallucination rates), not anecdotal results.
+* **Addressing Bias:** Actively audit and report societal, cultural, and clinical biases in the training data and the generated outputs.
+* **Reproducibility:** Report all computational resources and environmental impact so findings can be replicated.
+* **Explainability:** Prefer techniques that make the model's decision-making process more transparent.
 
 ## Key Challenges to Address:
 
-* **Black Box Nature:** Limited transparency regarding how LLMs reach conclusions.
-* **Hallucinations:** Potential for generating plausible but inaccurate information.
-* **Rapid Obsolescence:** Fast-paced updates in LLM technology can make study findings quickly irrelevant. 
+* **Black Box Nature:** Limited visibility into how LLMs reach their conclusions.
+* **Hallucinations:** Plausible but inaccurate output.
+* **Rapid Obsolescence:** LLM tooling moves fast enough that findings can be stale by the time they are published.
 
-For researchers and reviewers, these measures ensure that LLM-driven research remains valid and clinically useful. 
+For researchers and reviewers, holding to these practices is what keeps LLM-driven research valid and clinically useful.

@@ -18,14 +18,14 @@ Most MLOps tutorials stop at "model in a notebook, Dockerfile around it." The ha
 
 Two design rules shaped everything:
 
-* **The model is intentionally trivial.** DistilBERT fine-tuned on the Jigsaw toxicity dataset, six sigmoid labels (`toxic`, `severe_toxic`, `obscene`, `threat`, `insult`, `identity_hate`). The interesting work is the platform — the model could be swapped for anything without changing the machinery around it.
+* **The model is intentionally trivial.** DistilBERT fine-tuned on the Jigsaw toxicity dataset, six sigmoid labels (`toxic`, `severe_toxic`, `obscene`, `threat`, `insult`, `identity_hate`). The interesting work is the platform; the model could be swapped for anything without changing the machinery around it.
 * **Everything is a script or a manifest.** No console click-ops. Bootstrap, deploy, query, canary, promote, and roll back are all runnable commands, and the scripts are idempotent.
 
 ## Two clusters, one set of manifests
 
-The demo runs in two acts. Both clusters are k3s, both install the same platform stack from a single shared script — the only differences are the Triton backend, the node selector, and the autoscaler trigger.
+The demo runs in two acts. Both clusters are k3s, both install the same platform stack from a single shared script. The only differences are the Triton backend, the node selector, and the autoscaler trigger.
 
-| | Act 1 — CPU (laptop) | Act 2 — GPU (workstation) |
+| | Act 1: CPU (laptop) | Act 2: GPU (workstation) |
 |:---|:---|:---|
 | Cluster | `mlops-cpu` (k3s) | `mlops-gpu` (k3s on bare metal) |
 | Runtime | Triton + ONNX backend | Triton + TensorRT (fp16 plan, sm_75) |
@@ -69,9 +69,9 @@ MLFLOW_REGISTER_MODEL=true MLFLOW_PROMOTE_MODEL=true \
   .venv/bin/python -m training.train
 ```
 
-**Export and stage.** `serving/gpu/build-model-repo.sh` pulls the run's artifact from MLflow, exports ONNX with INT32 inputs (TensorRT requires INT32; the CPU path keeps INT64 — the export wraps the model to cast INT32→INT64 before the embedding layer), then bakes the TensorRT engine in a Kubernetes Job running the *same* Triton 23.05 image that will serve it. Baking the plan inside the serving container sidesteps host TensorRT version skew, at the cost of ~10 minutes of image pull on first deploy.
+**Export and stage.** `serving/gpu/build-model-repo.sh` pulls the run's artifact from MLflow, exports ONNX with INT32 inputs (TensorRT requires INT32; the CPU path keeps INT64, so the export wraps the model to cast INT32→INT64 before the embedding layer), then bakes the TensorRT engine in a Kubernetes Job running the *same* Triton 23.05 image that will serve it. Baking the plan inside the serving container sidesteps host TensorRT version skew, at the cost of ~10 minutes of image pull on first deploy.
 
-**Serve.** Both predictors are Argo Rollouts (plain KServe InferenceServices turned out to be a dead end here — more on that below) fronted by an Istio ingress gateway with a VirtualService splitting stable/canary traffic.
+**Serve.** Both predictors are Argo Rollouts (plain KServe InferenceServices turned out to be a dead end here; more on that below) fronted by an Istio ingress gateway with a VirtualService splitting stable/canary traffic.
 
 **Autoscale.** KEDA ScaledObjects scale the rollout on Prometheus queries: Triton queue depth on CPU (1–3 replicas), queue depth plus DCGM GPU utilization on GPU (1–2 replicas, one pod per GPU on the single-node cluster).
 
@@ -84,8 +84,8 @@ kubectl argo rollouts get rollout toxicity-gpu --watch
 
 Traffic shifts 5% → 25% → 50% → 100%, and at each step an Argo `AnalysisRun` checks canary Triton metrics (filtered to `version="2"`) against Prometheus gates. Fail a gate and the rollout aborts back to stable; `./serving/gpu/rollback.sh` is the manual escape hatch. On the 2-GPU node, `setCanaryScale: 1` plus a wrapper that pauses KEDA at 1 replica keeps stable + canary from fighting over the second GPU.
 
-**Close the feedback loop.** A small FastAPI UI (`frontend/`) accepts raw text, does the tokenization Triton doesn't, returns per-label scores, and logs every input with a UUID. Users who disagree with a prediction submit their own labels; `export_feedback.py` joins prediction and feedback logs into Jigsaw-schema CSVs, and training appends them to the Jigsaw split when `FEEDBACK_CSV_DIR` is set. The promotion gate and canary pipeline are unchanged — corrections flow through exactly the same gauntlet as any new training run.
+**Close the feedback loop.** A small FastAPI UI (`frontend/`) accepts raw text, does the tokenization Triton doesn't, returns per-label scores, and logs every input with a UUID. Users who disagree with a prediction submit their own labels; `export_feedback.py` joins prediction and feedback logs into Jigsaw-schema CSVs, and training appends them to the Jigsaw split when `FEEDBACK_CSV_DIR` is set. The promotion gate and canary pipeline are unchanged. Corrections flow through exactly the same gauntlet as any new training run.
 
 ## Takeaways
 
-The model was never the point. What I wanted was a place where the unglamorous questions have runnable answers: how does an artifact get from `mlflow.register` to serving traffic, what does a new version have to prove before it takes over, what does an inference actually cost on CPU vs. GPU, and how do real user corrections get back into training. Having it all on homelab hardware means every claim in the README is something I ran, broke, and fixed — and the next model I care about can inherit the whole path by swapping one training script.
+The model was never the point. What I wanted was a place where the unglamorous questions have runnable answers: how does an artifact get from `mlflow.register` to serving traffic, what does a new version have to prove before it takes over, what does an inference actually cost on CPU vs. GPU, and how do real user corrections get back into training. Having it all on homelab hardware means every claim in the README is something I ran, broke, and fixed, and the next model I care about can inherit the whole path by swapping one training script.

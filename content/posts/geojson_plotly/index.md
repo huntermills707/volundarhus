@@ -2,7 +2,7 @@
 draft = false
 date = 2026-02-21T19:44:23-08:00
 title = "Updating Plotly’s Choropleth Example with Current US Census Data"
-description = "A tutorial updating Plotly's official choropleth example with current U.S. Census data. It explains GeoJSON basics, shows how to download and convert TIGER/Line shapefiles using GeoPandas, and demonstrates how to fetch unemployment rates from the American Community Survey API. The final script merges geometry and data, adds FIPS identifiers, and produces an interactive county-level map. The goal is to keep geographic visualizations accurate as boundaries and statistics evolve."
+description = "A tutorial updating Plotly's official choropleth example with current U.S. Census data: GeoJSON basics, converting TIGER/Line shapefiles with GeoPandas, fetching unemployment rates from the ACS API, and merging it all into an interactive county-level map."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []
@@ -20,7 +20,7 @@ In this post I’ll show how to replace the stale assets with fresh data pulled 
 
 ## What Is GeoJSON?
 
-GeoJSON is a lightweight, text‑based format for encoding geographic data. It supports several geometry types—`Point`, `LineString`, `Polygon`, `MultiPoint`, `MultiLineString`, `MultiPolygon`, and `GeometryCollection`—wrapped in `Feature` objects that can carry additional properties.
+GeoJSON is a lightweight, text-based format for encoding geographic data. It supports several geometry types (`Point`, `LineString`, `Polygon`, `MultiPoint`, `MultiLineString`, `MultiPolygon`, and `GeometryCollection`) wrapped in `Feature` objects that can carry additional properties.
 
 A minimal GeoJSON file looks like this:
 ```json
@@ -46,7 +46,7 @@ The Census Bureau doesn’t publish GeoJSON directly; instead it provides shapef
 
 ## U.S. Census Shapefiles
 
-The Census Bureau’s primary vector product is the **TIGER/Line Shapefiles**. These files contain boundaries for states, counties, tracts, block groups, blocks, roads, railroads, water features, and more. Each feature includes fields such as `GEOID`, `NAME`, and other census‑specific codes that let you join demographic data from the American Community Survey (ACS) or Decennial Census.
+The Census Bureau’s primary vector product is the **TIGER/Line Shapefiles**. These files contain boundaries for states, counties, tracts, block groups, blocks, roads, railroads, water features, and more. Each feature includes fields such as `GEOID`, `NAME`, and other census-specific codes that let you join demographic data from the American Community Survey (ACS) or Decennial Census.
 
 Shapefiles are updated regularly.
 
@@ -86,7 +86,7 @@ geo.to_file("temp.geojson", driver='GeoJSON')
 
 #### Adding an id Field
 
-Plotly’s choropleth expects each feature to have an identifier that matches the values supplied in the locations column. We’ll add an id composed of the state and county FIPS codes. This is the default behavior. To change consult the (Plotly Choropleth Docs)[https://plotly.github.io/plotly.py-docs/generated/plotly.express.choropleth.html]
+Plotly’s choropleth expects each feature to have an identifier that matches the values supplied in the locations column. We’ll add an id composed of the state and county FIPS codes. This matches Plotly’s default behavior; to change it, consult the [Plotly Choropleth docs](https://plotly.github.io/plotly.py-docs/generated/plotly.express.choropleth.html).
 
 ```python
 import json
@@ -105,7 +105,7 @@ with open('geojson-counties-fips-post-2024.json', 'w') as fp:
 
 ## Getting Updated Unemployment Data
 
-The ACS provides county‑level unemployment rates. Below is a sample API call for 2023 data (append with `&key=<YOUR KEY>`  if you have a US Census API Key):
+The ACS provides county-level unemployment rates. Below is a sample API call for 2023 data (append with `&key=<YOUR KEY>`  if you have a US Census API Key):
 
 ```http
 https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S2301_C04_001E&ucgid=pseudo(0100000US%240500000)
@@ -136,9 +136,9 @@ df[['fips', 'unemp']].to_csv('fips-unemp-23.csv', index=False)
 
 ## Final Thoughts
 
-Maintaining up‑to‑date examples for a fast‑moving ecosystem like Plotly is challenging. By pulling the latest shapefiles from the Census and pairing them with current ACS data, you ensure that your visualizations stay accurate as county boundaries evolve.
+Keeping examples current in a fast-moving ecosystem like Plotly takes real effort. Pulling the latest shapefiles from the Census and pairing them with current ACS data keeps your maps accurate as county boundaries change.
 
-Feel free to adapt this workflow for other geographic levels (states, tracts, block groups) or different socioeconomic indicators. Happy mapping!
+You can adapt this workflow for other geographic levels (states, tracts, block groups) or different socioeconomic indicators. Happy mapping!
 
 ## Putting It All Together: The Updated Plotly Example
 

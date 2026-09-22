@@ -18,13 +18,13 @@ Standard word embeddings treat every occurrence of a word as equivalent. "Chest 
  
 ## Why Metadata Matters in Clinical Language
  
-The distributional hypothesis --- that words appearing in similar contexts have similar meanings --- is the theoretical backbone of every embedding model. In a general corpus, "context" is defined purely by neighboring words. In a clinical corpus, context is richer: the same sentence carries different semantic weight depending on the patient's age, insurance status, and ethnicity, and depending on the provider's role and the admission type.
+The distributional hypothesis, the idea that words appearing in similar contexts have similar meanings, is the theoretical backbone of every embedding model. In a general corpus, "context" is defined purely by neighboring words. In a clinical corpus, context is richer: the same sentence carries different semantic weight depending on the patient's age, insurance status, and ethnicity, and depending on the provider's role and the admission type.
  
 Consider the word *admitted*. In a note generated during an emergency admission for an elderly, uninsured patient, the surrounding language will differ systematically from its use in a scheduled elective note for a privately insured young adult. A model that conflates these will learn a single vector that is, in a statistical sense, the average of several distinct clinical realities.
  
 The goal of this project is to make that stratification explicit and learnable. Rather than conditioning embeddings post-hoc, the model learns patient and provider representations jointly with word representations during training. At inference time, the composed vector for "chest pain" shifts in the embedding space depending on who the patient is and who is writing the note.
  
-Beyond semantic accuracy, the practical motivation is downstream analysis: nearest-neighbor queries conditioned on patient group surface associations that would be invisible to a standard model, and those associations are precisely what is needed to study disparities in how clinical language is used across demographic strata.
+Beyond semantic accuracy, the practical motivation is downstream analysis: nearest-neighbor queries conditioned on patient group surface associations that would be invisible to a standard model, and those associations are exactly what you need to study disparities in how clinical language is used across demographic strata.
  
 ---
  
@@ -42,7 +42,7 @@ Each center word's representation is built by concatenating three components and
  
 $$\mathbf{v}\_{\text{word}} = \mathbf{e}\_w + \sum\_{g \in \mathcal{G}(w)} \mathbf{n}\_g$$
  
-where $\mathbf{e}\_w$ is the word embedding and $\mathbf{n}\_g$ are character n-gram embeddings hashed into a bucket table, inherited from FastText's subword approach. This handles out-of-vocabulary clinical abbreviations gracefully.
+where $\mathbf{e}\_w$ is the word embedding and $\mathbf{n}\_g$ are character n-gram embeddings hashed into a bucket table, inherited from FastText's subword approach. This handles out-of-vocabulary clinical abbreviations without any special-casing.
  
 **Patient metadata part** (dimension $d_p = 30$):
  
@@ -58,13 +58,13 @@ $$\mathbf{z} = \begin{bmatrix} \mathbf{v}\_{\text{word}} \\\\ \mathbf{v}\_{\text
  
 $$\mathbf{h} = W\_{\text{proj}} \, \mathbf{z} \quad \in \mathbb{R}^{d\_{\text{out}}}$$
  
-$W\_{\text{proj}} \in \mathbb{R}^{150 \times 195}$ has 29,250 parameters. This is a small matrix by modern standards but it is the architectural keystone: it is the learned function that determines how much the patient and provider context shifts the final representation. The projection is shared across all words and all metadata fields, which means the model generalizes to combinations of patient and provider tokens it has not seen together.
+$W\_{\text{proj}} \in \mathbb{R}^{150 \times 195}$ has 29,250 parameters. This is a small matrix by modern standards, but it does the important work: it is the learned function that determines how much the patient and provider context shifts the final representation. The projection is shared across all words and all metadata fields, which means the model generalizes to combinations of patient and provider tokens it has not seen together.
  
 ---
  
 ## Loss Function
  
-The model uses skip-gram with hierarchical softmax. For each center word $w_c$, the model attempts to predict each context word $w_o$ within a randomly sampled window. Standard softmax over a vocabulary of tens of thousands of words would require computing a partition function over all output vectors at every step. Hierarchical softmax replaces this with a binary decision tree --- specifically, a Huffman tree built over word frequencies so that frequent words sit near the root.
+The model uses skip-gram with hierarchical softmax. For each center word $w_c$, the model attempts to predict each context word $w_o$ within a randomly sampled window. Standard softmax over a vocabulary of tens of thousands of words would require computing a partition function over all output vectors at every step. Hierarchical softmax replaces this with a binary decision tree, specifically a Huffman tree built over word frequencies so that frequent words sit near the root.
  
 To predict context word $w_o$, the model traverses the Huffman path $\\{(n_1, d_1), \ldots, (n_L, d_L)\\}$ from root to the leaf representing $w_o$, where $n_i$ is the $i$-th internal node and $d_i \in \{0, 1\}$ is the Huffman code bit. The per-pair loss is:
  
@@ -108,7 +108,7 @@ $$\nabla\_{\mathbf{z}} = W\_{\text{proj}}^\top \, \nabla\_{\mathbf{h}}$$
  
 $$W\_{\text{proj}} \leftarrow W\_{\text{proj}} + \eta \, \nabla\_{\mathbf{h}} \, \mathbf{z}^\top$$
  
-The rank-1 outer product update to $W\_{\text{proj}}$ costs $O(d\_{\text{out}} \cdot d\_{\text{concat}})$ --- cheap relative to the full softmax it replaces.
+The rank-1 outer product update to $W\_{\text{proj}}$ costs $O(d\_{\text{out}} \cdot d\_{\text{concat}})$, cheap relative to the full softmax it replaces.
  
 The concatenated gradient $\nabla\_{\mathbf{z}}$ is sliced and distributed to its constituent embedding matrices:
  
@@ -152,7 +152,7 @@ The projection matrix $W\_{\text{proj}}$, the patient matrix, and the provider m
  
 With a chunk size of 1,000, this means one synchronization point per 1,000 samples rather than one per center word. The reduction in synchronization overhead is roughly four orders of magnitude relative to a mutex-per-update approach, while the gradient staleness introduced is bounded by the chunk size and manageable with a modest learning rate.
  
-This hybrid strategy --- Hogwild for sparse, synchronized averaging for dense --- is what makes it practical to train on a dataset the size of MIMIC-III without sacrificing either speed or correctness on the projection.
+This hybrid strategy (Hogwild for sparse, synchronized averaging for dense) is what makes it practical to train on a dataset the size of MIMIC-III without sacrificing either speed or correctness on the projection.
  
 ---
  
@@ -160,7 +160,7 @@ This hybrid strategy --- Hogwild for sparse, synchronized averaging for dense --
  
 Computing the full softmax over a vocabulary of $V$ words requires $O(V)$ work per prediction. For a clinical corpus with tens of thousands of unique tokens, this is the dominant training cost. Hierarchical softmax reduces this to $O(\log V)$ by replacing the flat output layer with a binary tree.
  
-A Huffman tree is built over the word frequency distribution: frequent words receive short codes (few binary decisions from root to leaf) and rare words receive long codes. This is optimal in an information-theoretic sense --- the expected path length is minimized given the frequency distribution, so the model spends less time on predictions that are already well-constrained by frequency.
+A Huffman tree is built over the word frequency distribution: frequent words receive short codes (few binary decisions from root to leaf) and rare words receive long codes. This is optimal in an information-theoretic sense: the expected path length is minimized given the frequency distribution, so the model spends less time on predictions that are already well-constrained by frequency.
  
 Each internal node of the tree holds an output vector $\mathbf{u}\_{n_i} \in \mathbb{R}^{d\_{\text{out}}}$. Predicting a context word is a sequence of left/right binary decisions along the path from root to that word's leaf. Each decision is a sigmoid-activated dot product between the current node's output vector and the projected center vector $\mathbf{h}$. The total number of such decisions is the depth of the leaf in the Huffman tree, which is $O(\log V)$ on average and, by the Huffman property, minimized in expectation.
  
@@ -172,7 +172,7 @@ At inference time, nearest-neighbor search operates entirely in the $d\_{\text{o
  
 The MIMIC-III preprocessing pipeline converts the raw database tables into the triple-pipe training format in three steps. Step one joins the relevant tables into a merged Parquet file using Polars lazy frames to keep peak memory low. Step two runs sentence segmentation on the clinical notes in parallel batches, producing a sentence-level Parquet. Step three explodes the sentences into the final training text with one sentence per line, shuffled, annotating each line with patient demographics (MeSH age category, gender, ethnicity, language, insurance) and provider fields (caregiver title, admission type).
  
-A two-stage hierarchical bootstrap is implemented for statistical robustness: stage one resamples patient IDs with replacement, stage two resamples each sampled patient's notes with replacement, preserving the note count. This respects the clustered correlation structure --- notes from the same patient are not independent observations --- which matters for any downstream analysis that uses bootstrap confidence intervals.
+A two-stage hierarchical bootstrap is implemented for statistical robustness: stage one resamples patient IDs with replacement, stage two resamples each sampled patient's notes with replacement, preserving the note count. This respects the clustered correlation structure (notes from the same patient are not independent observations), which matters for any downstream analysis that uses bootstrap confidence intervals.
  
 ---
  
@@ -180,17 +180,17 @@ A two-stage hierarchical bootstrap is implemented for statistical robustness: st
  
 The architecture as described learns to represent how clinical language varies with metadata. The more consequential question is what those variations reveal.
  
-**Measuring documentation disparities.** If the nearest neighbors of "pain" shift systematically when the patient group changes from "elderly white medicare" to "young adult hispanic medicaid," that shift is a measurable signal. Documentation practices are known to differ across patient demographics --- the frequency of certain terms, the level of detail in subjective sections, the language used to characterize patient behavior. Embeddings trained with stratified metadata make these differences legible as geometric distances in a shared space.
+Measuring documentation disparities. If the nearest neighbors of "pain" shift systematically when the patient group changes from "elderly white medicare" to "young adult hispanic medicaid," that shift is a measurable signal. Documentation practices are known to differ across patient demographics: the frequency of certain terms, the level of detail in subjective sections, the language used to characterize patient behavior. Embeddings trained with stratified metadata make these differences measurable as geometric distances in a shared space.
  
-**Social determinants of health as first-class features.** Insurance type, language, and ethnicity are already present in the training format as patient metadata tokens. Marital status, housing instability, and other social determinants could be added from structured fields in MIMIC-III or similar datasets. The architecture is extensible: adding a fourth metadata group requires widening $W\_{\text{proj}}$ by $d\_{\text{new}}$ columns and adding the corresponding embedding matrix. No structural changes to the training loop or hierarchical softmax are needed.
+Social determinants of health as first-class features. Insurance type, language, and ethnicity are already present in the training format as patient metadata tokens. Marital status, housing instability, and other social determinants could be added from structured fields in MIMIC-III or similar datasets. The architecture is extensible: adding a fourth metadata group requires widening $W\_{\text{proj}}$ by $d\_{\text{new}}$ columns and adding the corresponding embedding matrix. No structural changes to the training loop or hierarchical softmax are needed.
  
-**Detecting care pathway variation.** Provider role and admission type as conditioning variables open the door to studying how the same clinical presentation is described differently across care settings. An attending's emergency note about chest pain and a resident's elective note use the same vocabulary but with different distributional properties. Conditioned nearest-neighbor queries can surface these differences systematically across large corpora, providing an empirical basis for studying whether and how care varies by provider type and setting.
+Detecting care pathway variation. Provider role and admission type as conditioning variables make it possible to study how the same clinical presentation is described differently across care settings. An attending's emergency note about chest pain and a resident's elective note use the same vocabulary but with different distributional properties. Conditioned nearest-neighbor queries can surface these differences systematically across large corpora, providing an empirical basis for studying whether and how care varies by provider type and setting.
  
-**Outcome-conditioned embeddings.** The most direct extension is adding a fourth group for clinical outcomes: discharge disposition, 30-day readmission, mortality. A model trained with outcome as a conditioning variable would learn to represent language in a space where the direction toward "readmission" or "discharge to SNF" is geometrically meaningful. This would enable outcome-risk-conditioned similarity queries and, potentially, a richer feature representation for downstream risk stratification models than bag-of-words or standard embeddings provide.
+Outcome-conditioned embeddings. The most direct extension is adding a fourth group for clinical outcomes: discharge disposition, 30-day readmission, mortality. A model trained with outcome as a conditioning variable would learn to represent language in a space where the direction toward "readmission" or "discharge to SNF" is geometrically meaningful. This would enable outcome-risk-conditioned similarity queries and, potentially, a richer feature representation for downstream risk stratification models than bag-of-words or standard embeddings provide.
  
-**Bias auditing.** Embeddings encode the statistical regularities of the corpus they are trained on, which means they also encode its biases. Stratified embeddings make it possible to ask whether the association between a clinical term and a sentiment or severity indicator changes across patient demographic groups. If "noncompliant" is more proximate to terms indicating poor outcomes in notes about patients of certain demographic groups than others, that is an auditable signal in the embedding geometry --- one that a single unstratified model would obscure.
+Bias auditing. Embeddings encode the statistical regularities of the corpus they are trained on, which means they also encode its biases. Stratified embeddings make it possible to ask whether the association between a clinical term and a sentiment or severity indicator changes across patient demographic groups. If "noncompliant" is more proximate to terms indicating poor outcomes in notes about patients of certain demographic groups than others, that is an auditable signal in the embedding geometry, one that a single unstratified model would obscure.
  
-The common thread across these directions is the same motivation that drove the original design: clinical meaning is not context-free, and a representation model that treats it as such forfeits the most clinically and ethically significant variation in the data.
+The common thread across these directions is the same motivation that drove the original design: clinical meaning is not context-free, and a representation model that treats it as such throws away exactly the variation that matters most, clinically and ethically.
  
 ---
  

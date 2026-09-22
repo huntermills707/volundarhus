@@ -5,13 +5,13 @@ draft: false
 tags: []
 categories: ["open-source", "statistics"]
 math: true
-description: "pymargins is a from-scratch redesign of my earlier smmargins package: expert-mode marginal effects for Python — adjusted predictions, slopes, contrasts, and difference-in-differences — built around a session that pre-commits to its inference posture, JAX-native autodiff for exact gradients and Hessians, a κ curvature diagnostic that knows when the delta method is unsafe, and auto-detected adapters spanning statsmodels, linearmodels, lifelines, and scikit-learn."
+description: "pymargins is a from-scratch redesign of my earlier smmargins package: marginal effects for Python (adjusted predictions, slopes, contrasts, difference-in-differences) built around a session that pre-commits to its inference posture, with JAX autodiff for exact gradients and Hessians, a curvature diagnostic that flags when the delta method is unsafe, and adapters for statsmodels, linearmodels, lifelines, and scikit-learn."
 ---
 
 A while back I wrote about [marginal effects for StatsModels]({{< ref "smmargins" >}})
 and then [released that work as **smmargins**]({{< ref "smmargins_package" >}}),
 a package that brought Stata-style `margins` to the StatsModels
-ecosystem. This post is about its successor, **pymargins** — which is
+ecosystem. This post is about its successor, **pymargins**, which is
 not a new version of smmargins but a complete, ground-up redesign.
 
 ```bash
@@ -31,8 +31,8 @@ the useful parts out of that research code and giving them a public
 API.
 
 It worked, and people use it. But the moment I tried to push past the
-original feature set — more model families, simulation and bootstrap
-inference, survey designs, joint tests across calls — the design
+original feature set (more model families, simulation and bootstrap
+inference, survey designs, joint tests across calls), the design
 started to fight me. The research code had grown organically around
 one set of assumptions (a single model class, the delta method, a
 patsy design matrix), and every new feature meant threading state
@@ -50,8 +50,8 @@ question.
 ## The core idea: a session is a methodological commitment
 
 The single biggest design change is that a `Margins` object is a
-**session**. When you construct one, it commits — up front, in the
-constructor — to:
+**session**. When you construct one, it commits up front, in the
+constructor, to:
 
 - the **inference scale** (linear, log, logit, correlation, …),
 - the **variance estimator** (`vcov`: HC0–HC3, cluster, HAC, …),
@@ -89,20 +89,20 @@ m.contrasts(                               # treated-vs-control risk difference
 
 This sounds like a small ergonomics tweak, but it's the thing that
 unfit smmargins for growth. In the old design, every method took its
-own `vcov`, its own `at`, its own everything — which meant the
-methodological posture of an analysis was scattered across a dozen
-call sites, and nothing stopped two calls from silently disagreeing
-about how standard errors were computed. In pymargins, a reviewer sees
+own `vcov`, its own `at`, its own everything, so the methodological
+posture of an analysis was scattered across a dozen call sites, and
+nothing stopped two calls from silently disagreeing about how standard
+errors were computed. In pymargins, a reviewer sees
 the *entire* methodological posture in one constructor call, and a
 change of posture shows up as a new session in the audit trail.
 
-It also has teeth under the hood. A session commits not just to the
-*parameters* of inference but to the **random objects** that implement
+It also has teeth under the hood. A session commits to the
+*parameters* of inference and to the **random objects** that implement
 them. The parameter covariance $\hat\Sigma$ is resolved once and
 frozen onto every result. Bootstrap resample indices are drawn once
 and reused. Simulation $\beta^*$ draws are generated once and shared.
 So two bootstrap calls on the same session evaluate their estimands on
-the *exact same* sequence of refitted models — which is what makes
+the *exact same* sequence of refitted models. That is what makes
 joint inference across calls (a contrast between a result from one
 call and a result from another) actually valid. Mutating an input that
 already fed one of these caches raises rather than silently changing
@@ -111,16 +111,16 @@ your answers.
 ## JAX-native gradients instead of finite differences
 
 smmargins computed its delta-method standard errors with central
-finite differences on a closure — perturb $\beta$ in each coordinate,
-re-evaluate, divide. That's robust and easy to reason about, and it
+finite differences on a closure: perturb $\beta$ in each coordinate,
+re-evaluate, divide. That's simple and easy to reason about, and it
 was the right call for a ~500-line module. But it's $O(p)$
 re-evaluations per gradient, it carries step-size error, and it gives
 you no clean path to second-order information.
 
 pymargins is **JAX-native**. Gradients and Hessians of every estimand
 are exact autodiff, not differences. That's faster, has no step-size
-knob to get wrong, and — crucially — it hands you the Hessian for
-free, which is what enables the next piece.
+knob to get wrong, and, crucially, hands you the Hessian for free.
+The Hessian is what enables the next piece.
 
 ## Knowing when the delta method lies: the κ diagnostic
 
@@ -133,8 +133,8 @@ $$
 $$
 
 It's exact for linear estimands and excellent for mildly nonlinear
-ones. But for a strongly curved estimand — a relative risk, a ratio,
-a prediction far out on a logistic curve — that linearization can be
+ones. But for a strongly curved estimand (a relative risk, a ratio,
+a prediction far out on a logistic curve) that linearization can be
 badly wrong, and nothing in the delta-method output tells you so. You
 get a tidy symmetric interval that happens to be a lie.
 
@@ -149,7 +149,7 @@ $$
 \kappa = \frac{\lVert \tilde H \rVert}{\lVert \tilde g \rVert^2}.
 $$
 
-The whitening is what makes κ meaningful — it's invariant to affine
+The whitening is what makes κ meaningful: it's invariant to affine
 reparameterization, so it measures curvature *in the metric the
 sampling distribution actually lives in* rather than in whatever units
 you happened to write the model in. When κ crosses a calibrated
@@ -161,25 +161,24 @@ print(m.diagnose().summary())   # pre-flight: is the delta method safe here?
 ```
 
 This is the feature I most wanted in smmargins and most couldn't
-retrofit. It needs the Hessian (so it needs the autodiff backend) and
-it needs a clean fallback to simulation (so it needs the unified
-inference layer) — neither of which the old architecture had a place
-for.
+retrofit. It needs the Hessian, so it needs the autodiff backend, and
+it needs a clean fallback to simulation, so it needs the unified
+inference layer. The old architecture had a place for neither.
 
 ## Three inference methods, one interface
 
 Because the session abstracts the inference distribution, all three
 methods are interchangeable behind the same calls:
 
-- **Delta method** — JAX-exact gradients and Hessians.
-- **Krinsky–Robb simulation** — parametric Monte Carlo on the
+- **Delta method**: JAX-exact gradients and Hessians.
+- **Krinsky–Robb simulation**: parametric Monte Carlo on the
   coefficient distribution; the safe harbor when κ is large.
-- **Bootstrap** — nonparametric, plus cluster and block variants,
+- **Bootstrap**: nonparametric, plus cluster and block variants,
   parallelizable, with percentile / BCa / normal intervals.
 
 Simultaneous confidence intervals (Bonferroni, Šidák, sup-t),
 multiple-comparison adjustment, elasticities, jackknife influence
-diagnostics, and — new in 0.2 — complex **survey designs** with
+diagnostics, and, new in 0.2, complex **survey designs** with
 Taylor-linearization standard errors that match R's
 `survey::svyglm` all sit on top of this one layer.
 
@@ -189,22 +188,22 @@ smmargins targeted StatsModels' linear models. pymargins detects the
 backend from the fitted object and ships adapters for a much wider
 field:
 
-- **statsmodels** — OLS/WLS/GLS, GLM, discrete
+- **statsmodels**: OLS/WLS/GLS, GLM, discrete
   (Logit/Probit/Poisson/NegBin/zero-inflated), MNLogit, ordered, GEE,
   MixedLM, RLM, QuantReg, PHReg
-- **linearmodels** — IV/2SLS, panel fixed/random effects, absorbing
+- **linearmodels**: IV/2SLS, panel fixed/random effects, absorbing
   regression, Fama–MacBeth
-- **lifelines** — CoxPH, time-varying Cox, Weibull/LogNormal/LogLogistic
+- **lifelines**: CoxPH, time-varying Cox, Weibull/LogNormal/LogLogistic
   AFT, generalized gamma, piecewise exponential, cubic-spline survival,
   with survival-curve estimands
-- **scikit-learn** — any estimator, via bootstrap inference
-- **custom** — register your own with `register_adapter`
+- **scikit-learn**: any estimator, via bootstrap inference
+- **custom**: register your own with `register_adapter`
 
 The estimand vocabulary stays the same across all of them:
 `predict` (adjusted predictions), `dydx` (slopes), and
 `contrasts` / `evaluate` (differences and arbitrary differentiable
-combinations). Picking *whose* effect — the sample average (AME), a
-typical unit (MEM), or a representative profile (MER) — is a separate,
+combinations). Picking *whose* effect (the sample average (AME), a
+typical unit (MEM), or a representative profile (MER)) is a separate,
 orthogonal axis.
 
 ## smmargins vs. pymargins
@@ -214,23 +213,23 @@ orthogonal axis.
 | Origin | research code, carved into a package | clean redesign |
 | Core object | function calls | a **session** that pre-commits its posture |
 | Differentiation | finite differences | JAX autodiff (exact gradients + Hessians) |
-| Curvature check | — | **κ diagnostic** + auto-fallback to simulation |
+| Curvature check | none | **κ diagnostic** + auto-fallback to simulation |
 | Inference | delta (+ some sim/bootstrap) | delta / Krinsky–Robb / bootstrap, unified |
 | Model backends | statsmodels linear models | statsmodels, linearmodels, lifelines, sklearn, custom |
-| Survey designs | — | Taylor-linearization SEs (matches `svyglm`) |
+| Survey designs | none | Taylor-linearization SEs (matches `svyglm`) |
 
 ## Should you switch?
 
 If smmargins covers what you need today, it still works and I'm not
 yanking it. But pymargins is where the design can actually carry the
-features I kept wanting to add — so it's where new work goes.
+features I kept wanting to add, so it's where new work goes.
 
 Reach for it when the model is nonlinear, when effects are conditional
 on interactions or splines, when your audience needs outcome units
 instead of log-odds, when heterogeneity across subgroups *is* the
 question, or when the answer is a counterfactual contrast. And reach
-for it specifically when you care that the standard error is *right* —
-the κ diagnostic exists precisely because a confident-looking interval
+for it specifically when you care that the standard error is *right*.
+The κ diagnostic exists precisely because a confident-looking interval
 from a curved estimand is the easiest way to be wrong.
 
 pymargins is **alpha**; APIs may still shift before 1.0. Docs,
