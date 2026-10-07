@@ -77,3 +77,7 @@ style = "github-dark"
   name = "About"
   weight = 3
   url = "about/"
+[[menu.main]]
+  name = "Weather"
+  weight = 4
+  url = "https://weather.volundarhus.com/"
