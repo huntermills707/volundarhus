@@ -59,6 +59,8 @@ const CONFIG = {
   ellipseXScale: 1.5,
   ellipseYScale: 1.1,
   ellipseRotationDeg: 0,
+  lutMax: 0.95,     // stop viridis short of yellow
+  maxAlpha: 0.7,    // overall trail opacity
 
   // Viridis colour LUT (already normalized 0‑1)
   colourLUT: [
@@ -517,7 +519,7 @@ function lerpRGB(c1, c2, t) {
 function colourFromLUT(t) {
   const lut = CONFIG.colourLUT;
   const maxIdx = lut.length - 1;
-  const invT = 1 - t;
+  const invT = (1 - t) * CONFIG.lutMax;
   const exact = invT * maxIdx;
   const idxLow = Math.floor(exact);
   const idxHigh = Math.min(maxIdx, idxLow + 1);
@@ -599,7 +601,7 @@ class Point {
 
       const t = ellipsoidalNorm(a.sx, a.sy);
       const baseCol = colourFromLUT(t);
-      const colWithAlpha = color(red(baseCol), green(baseCol), blue(baseCol), alpha * 255);
+      const colWithAlpha = color(red(baseCol), green(baseCol), blue(baseCol), alpha * 255 * CONFIG.maxAlpha);
       stroke(colWithAlpha);
       line(a.sx, a.sy, b.sx, b.sy);
     }
@@ -613,7 +615,7 @@ class Point {
       const alpha = fadeIn * (1 - tailFade);
       const t = ellipsoidalNorm(cur.sx, cur.sy);
       const baseCol = colourFromLUT(t);
-      const colWithAlpha = color(red(baseCol), green(baseCol), blue(baseCol), alpha * 255);
+      const colWithAlpha = color(red(baseCol), green(baseCol), blue(baseCol), alpha * 255 * CONFIG.maxAlpha);
       fill(colWithAlpha);
       noStroke();
 

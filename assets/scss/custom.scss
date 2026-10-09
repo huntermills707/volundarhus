@@ -123,3 +123,10 @@ body.colorscheme-dark {
     width: 15%;
   }
 }
+
+// Dark halo keeps text legible over bright trails.
+.content article,
+.list,
+.about-info {
+  text-shadow: 0 0 4px rgba(30, 45, 71, 0.9), 0 0 1px rgb(30, 45, 71);
+}
