@@ -12,7 +12,7 @@ defaultContentLanguage = "en"
 pagerSize = 20
 
 [markup.highlight]
-style = "github-dark"
+style = "nord"
 
 [params]
   author = "Hunter Mills"

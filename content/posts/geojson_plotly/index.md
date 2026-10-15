@@ -107,7 +107,7 @@ with open('geojson-counties-fips-post-2024.json', 'w') as fp:
 
 The ACS provides county-level unemployment rates. Below is a sample API call for 2023 data (append with `&key=<YOUR KEY>`  if you have a US Census API Key):
 
-```http
+```text
 https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S2301_C04_001E&ucgid=pseudo(0100000US%240500000)
 ```
 

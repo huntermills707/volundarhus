@@ -130,3 +130,19 @@ body.colorscheme-dark {
 .about-info {
   text-shadow: 0 0 4px rgba(30, 45, 71, 0.9), 0 0 1px rgb(30, 45, 71);
 }
+
+// Frosted code blocks: override the inline Chroma background so the
+// backdrop shows through, and drop the navy text halo inside code.
+// Scoped to the dark scheme to outrank the theme's `pre code` rule.
+body.colorscheme-dark .highlight pre {
+  background-color: rgba(15, 22, 38, 0.55) !important;
+  border: 1px solid rgba(121, 192, 255, 0.12);
+  text-shadow: none;
+
+  // The theme's `pre code { background-color: inherit }` would repeat the
+  // translucent fill on the inline-block <code>, stacking a second pane.
+  code {
+    background-color: transparent;
+    padding: 0;
+  }
+}
