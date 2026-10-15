@@ -146,3 +146,11 @@ body.colorscheme-dark .highlight pre {
     padding: 0;
   }
 }
+
+// Inline code chips: same frosted navy as the code blocks instead of the
+// theme's flat gray.
+body.colorscheme-dark :not(pre) > code {
+  background-color: rgba(15, 22, 38, 0.55);
+  border: 1px solid rgba(121, 192, 255, 0.12);
+  text-shadow: none;
+}
