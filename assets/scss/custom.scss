@@ -147,9 +147,10 @@ body.colorscheme-dark .highlight pre {
   }
 }
 
-// Inline code chips: same frosted navy as the code blocks instead of the
-// theme's flat gray.
-body.colorscheme-dark :not(pre) > code {
+// Inline code and post tag chips: same frosted navy as the code blocks
+// instead of the theme's flat gray.
+body.colorscheme-dark :not(pre) > code,
+body.colorscheme-dark .content .post .post-meta .tags .tag {
   background-color: rgba(15, 22, 38, 0.55);
   border: 1px solid rgba(121, 192, 255, 0.12);
   text-shadow: none;
