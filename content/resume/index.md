@@ -36,6 +36,8 @@ description: "The resume of Hunter Mills, detailing his career as a Machine Lear
 
 ## Publications
 
+Miramontes, S., Khan, U., Zimmerman, S., Ferguson, E. L., **Mills, H.**, Oskotsky, B., ... & Tsoy, E. (2026). [Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses After Dementia in a Large Electronic Medical Record System](/posts/dementia_reversion/). Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring, 18(4), e70523.
+
 Farrand, E., **Mills, H.**, Radhakrishnan, L., Ieong, M., Lee, A., Gologorskaya, O., & Butte, A. (2026). [Subspecialty ILD Clinic Care is Associated with More Guideline-Concordant Evaluation and Improved Outcomes Compared to Other Ambulatory Settings: A Retrospective Cohort Study](/posts/ild_clinic_care/). CHEST, S0012-3692(26)06937-0.
 
 Farrand, E. D., **Mills, H.**, Radhakrishnan, L., Ieong, M., Gologorskaya, O., & Butte, A. (2026). [Real-World Differences in ILD Diagnosis, Management, and Outcomes Across Subspecialty and Non-Specialty Care Settings: Clinical and Health System Implications](/posts/ild_care_settings/). American Journal of Respiratory and Critical Care Medicine, 212(Supplement_1), aamag162.2858.
@@ -59,8 +61,6 @@ Cu, C. W., Dundas, N. E., Heintz, T., Sheikh, Z. A., Alonso-Bermudez, B., Walker
 Marquez-Grap, G., Leung, A., Orcales, F., Kranyak, A., Johnson, C., Smith, P., …, **Mills, H.**, ... & Liao, W. (2025). [Monitoring atopic dermatitis using mobile-app based photography and surveys](/posts/dermatitis_monitoring/). Journal of Dermatological Treatment, 36(1), 2555983.
 
 Marini, S., Alwakeal, A. R., **Mills, H.**, Bernstock, J. D., Mashlah, A., Hassan, M. T., ... & Zafonte, R. (2025). [Traumatic Brain Injury and Risk of Malignant Brain Tumors in Civilian Populations](/posts/tbi_brain_cancer/). JAMA network open, 8(8), e2528850-e2528850.
-
-Miramontes, S., Khan, U., Zimmerman, S., Ferguson, E. L., **Mills, H.**, Oskotsky, B., ... & Tsoy, E. (2025). [Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses Following Dementia in a Large Electronic Medical Record System](/posts/dementia_reversion/). medRxiv.
 
 Yang, H. Y., Raghunathan, K., Widera, E., Pantilat, S. Z., Brender, T., Heintz, T. A., …, **Mills, H.** ... & Cobert, J. (2025). [Lexical associations can characterize clinical documentation trends related to palliative care and metastatic cancer](/posts/lexcial_assoc_palliative_metastatic/). Scientific Reports, 15(1), 17245.
 

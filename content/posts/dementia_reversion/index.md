@@ -1,8 +1,8 @@
 +++ 
 draft = false
-date = 2025-07-16T12:54:28-08:00
-title = "Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses Following Dementia in a Large Electronic Medical Record System"
-description = "A study of 5,965 UCSF patients found roughly one in seven dementia patients later receives an MCI diagnosis, suggesting over-diagnosis or coding inconsistencies. Group LASSO and random forest models flagged younger age, Spanish-language preference, and comorbidity burden as predictors of reversion."
+date = 2026-11-01T09:00:00-07:00
+title = "Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Cognitive Impairment Diagnoses After Dementia in a Large Electronic Medical Record System"
+description = "A full summary of our Alzheimer's & Dementia study of diagnostic reversion among 5,965 UCSF patients. Nearly one in seven patients received an MCI diagnosis after dementia, and 73.4% of those reverters later returned to dementia. Group LASSO logistic regression and random forests identified age, preferred language, care setting, cardiovascular risk, and comorbidity burden as predictors, revealing diagnostic instability shaped by clinical and social factors."
 slug = ""
 authors = ["Hunter Mills"]
 tags = []
@@ -10,86 +10,129 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://www.medrxiv.org/content/10.1101/2025.07.16.25331678v2.full.pdf)
+[Publication Link](https://doi.org/10.1002/dad2.70523)
 
 ## Why Look at “Diagnostic Reversion”?
 
-Mild cognitive impairment (MCI) is usually framed as a precursor to dementia. So when an electronic health record (EHR) shows a patient labeled with dementia *first* and an MCI code later, something is off. Either the original dementia diagnosis was premature, or the MCI label is wrong. Understanding how often this happens, and which patients it happens to, can expose gaps in clinical decision-making, highlight health-equity issues, and show where diagnostic pathways need tightening.
+Mild cognitive impairment (MCI) is usually framed as a precursor to dementia. So when an electronic health record (EHR) shows dementia first and MCI later, the diagnostic trajectory deserves attention. The original dementia diagnosis may have been premature, the later MCI diagnosis may be incorrect, or the patient's presentation may genuinely fluctuate near the boundary between the two categories.
+
+Most earlier work examined reversion from MCI to normal cognition or the stability of an initial diagnosis. We studied the less-explored reverse sequence—**dementia followed by MCI**—to measure how often it occurs, what happens next, and which clinical and social factors are associated with it.
 
 ## Study Overview
-* **Cohort:** 5,965 UCSF Health patients, age ≥ 50, with an incident dementia diagnosis between 1988–2024.
-* **Groups:**
-	* **Reference (86.3%, N=5,147):** Dementia diagnosis without any later MCI code.
-	* **Reverters (13.7%, N=818):** Received an MCI diagnosis after the initial dementia code.
-* **Data source:** Structured ICD-9/ICD-10 codes extracted from the UCSF EHR.
-* **Predictors:** Demographics, preferred language, clinic type, cardiovascular-risk scores, Charlson Comorbidity Index (CCI), and a binary matrix of 101 aggregated ICD-block codes (derived from >1,900 raw codes).
+
+* **Cohort:** 5,965 UCSF Health patients aged 50 or older with an incident dementia diagnosis between 1988 and 2024. Records from UCSF's legacy STOR system and its current Epic-based EHR were integrated in the de-identified Caboodle data warehouse.
+* **Reference group:** 5,147 patients (86.3%) had no subsequent MCI diagnosis.
+* **Reverters:** 818 patients (13.7%) received an MCI diagnosis after their initial dementia diagnosis.
+* **Care setting:** The index diagnosis was categorized as coming from a dementia specialty clinic, primary care/internal medicine, the emergency department, or another specialty clinic.
+* **Clinical history:** ICD-9/ICD-10 diagnoses recorded before the index dementia diagnosis were grouped into 101 ICD blocks present in at least 5% of patients, reduced from 1,931 unique blocks.
+* **Other predictors:** Age, sex, preferred language, neighborhood education and home value, cardiovascular disease burden, cardiovascular risk factors, and Charlson Comorbidity Index (CCI).
+
+|Figure 1: Cohort definition, descriptive analyses, and comparative modeling framework. The reverter pathway can include a later return to dementia.|
+|:---:|
+|![Study design and analytical framework](fig1.webp)|
 
 ## Analytical Pipeline
 
-1. **Feature construction:** built a patient-level matrix of binary ICD-block presence, plus continuous/compositional covariates.
-2. **Descriptive statistics:** chi-square tests (Benjamini-Hochberg corrected, p < 0.01) identified 39 ICD blocks differing between groups.
-3. **Predictive modeling:**
-	* **Group LASSO-regularized logistic regression** (5-fold CV) for feature selection.
-	* **Standard logistic regression (LOGIT)** on the selected features for coefficient estimation.
-	* **Parallel random-forest models** for non-linear comparison.
-4. **Evaluation:** stratified 70/30 train-test split; performance measured with AUROC, AUPRC, and threshold-optimized F1 scores.
+1. **Descriptive comparison:** Chi-squared tests with Benjamini–Hochberg correction identified ICD blocks whose pre-index prevalence differed between groups.
+2. **Trajectory analysis:** We measured time from dementia to MCI, time spent with the MCI diagnosis, subsequent return to dementia, and health-system use.
+3. **Predictive modeling:** A stratified 70/30 train-test split preserved the approximately 14% reversion rate. All feature selection and threshold tuning were performed on the training set.
+4. **Logistic regression:** Group LASSO with five-fold cross-validation selected groups of features; standard logistic regression was then refit to estimate odds ratios and confidence intervals.
+5. **Random forests:** Matched models tested whether nonlinear methods improved discrimination and provided complementary feature-importance rankings.
+6. **Model configurations:** Each approach used (a) cardiovascular burden and risk scores, (b) CCI, or (c) ICD-block history, together with demographics and clinic type. Sensitivity analyses replaced preferred language with race/ethnicity because the two were correlated.
 
-|Overview|
-|:---:|
-|![Fig1](fig1.jpg)|
+## Reversion Was Usually Not the End of the Diagnostic Story
 
-## Key Findings
+Among the 818 reverters:
 
-|Variable|Direction of Association (Test Set)|
+|Trajectory measure|Result|
 |:---|:---|
-|Younger age|Higher odds of reversion|
-|Spanish-language preference|Higher odds of reversion|
-|Higher cardiovascular-risk score|Higher odds of reversion|
-|Higher Charlson Comorbidity Index|Higher odds of reversion|
-|Diagnosis in “other specialty” clinics|Lower odds of reversion|
-|Russian-language preference|Lower odds of reversion|
+|Median time from index dementia diagnosis to first MCI diagnosis|**283 days** (IQR 95–837)|
+|Median time spent with the MCI diagnosis before another change|**90 days** (IQR 13–313)|
+|Patients who later received a second dementia diagnosis|**600 of 818 (73.4%)**|
+|Median time from MCI to that second dementia diagnosis|**98 days** (IQR 32–310)|
 
-|Results|
+The log–log plots in Figure 2A show a weak positive nonlinear relationship between time to reversion and time spent in MCI, with wide variation across patients. Figure 2B summarizes just how often the MCI interval was temporary. This is the strongest descriptive evidence that reversion frequently represents **diagnostic instability or reconsidered uncertainty**, rather than sustained cognitive improvement.
+
+Reverters also had longer post-index follow-up, more recorded diagnoses, more unique conditions, and more visit days. Greater engagement with the health system may create more opportunities for diagnostic revision and is an important context for interpreting the associations.
+
+|Figure 2: Diagnostic trajectories and pre-index ICD-block differences. Panel C shows 39 significantly different blocks; codes on the right were more prevalent among reverters.|
 |:---:|
-|![Fig2](fig2.jpg)|
+|![Diagnostic trajectories and ICD block differences](fig2.webp)|
 
-#### ICD-Block Signals
+## Which Factors Predicted Reversion?
 
-* **More common in reverters:** dizziness/giddiness (R42), depressive episodes (F32), osteoarthritis (M19), cataracts (H25/H26), dorsalgia (M54), unspecified injuries (T14), atherosclerosis (I67), immunization encounters, diverticular disease, and various spondylopathies.
-* **More common in stable dementia:** chronic kidney disease (N18), atrial fibrillation (I48), fluid/electrolyte disorders (E87), abnormal lung imaging (R91), long-term drug therapy (Z79), brain disorders (G93), respiratory disorders (J98).
+The held-out test-set models showed consistent associations across the cardiovascular and CCI specifications:
 
-#### Model Performance
+|Predictor|Held-out test-set association|
+|:---|:---|
+|Older age|Lower odds: OR 0.96 per year (95% CI 0.94–0.98)|
+|Spanish-language preference|Higher odds: OR 1.96 (1.08–3.53) in the cardiovascular model; OR 2.10 (1.17–3.78) in the CCI model|
+|Higher cardiovascular risk score|Higher odds: OR 1.18 (1.03–1.36)|
+|Higher CCI|Higher odds: OR 1.09 (1.05–1.14)|
+|Index diagnosis in another specialty clinic|Lower odds: OR 0.34 (0.22–0.52) and OR 0.31 (0.20–0.47), respectively|
+|Russian-language preference|Lower odds: OR 0.32 (0.12–0.85) and OR 0.31 (0.12–0.83), respectively|
 
-* **Logistic regression (best specification):** AUROC ≈ 0.74, AUPRC ≈ 0.32. Threshold tuning (maximizing F1) lifted sensitivity to ≈ 0.75 and F1 to ≈ 0.35.
-* **Random forest:** AUROC ≈ 0.73, AUPRC ≈ 0.31; F1 after tuning ≈ 0.38.
-* **Interpretability:** The logistic models give calibrated odds ratios, which makes clinical translation straightforward. The random forests discriminated about as well but with less transparent effect sizes.
+Higher cardiovascular disease burden and emergency-department diagnosis were associated with lower odds in training, but those associations were not statistically significant in the test set. Neighborhood education predicted reversion in training but not testing, and median home value was not significantly associated in the test sets.
 
-## What Does This Mean for Practice?
+Figure 3 makes the train/test comparison explicit: several effects have consistent directions, but the held-out intervals are wider. That is a useful reminder to distinguish reproducible signals from associations supported only by the training data.
 
-1. **Diagnostic Uncertainty Is Real and Structured:** Roughly one in seven dementia patients later receive an MCI label, which points to systematic over-diagnosis or inconsistent coding.
-2. **Language Barriers Matter:** Spanish-speaking patients had about twice the odds of reversion, hinting at communication gaps, insufficient interpreter use, or differences in how symptoms present across cultures.
-3. **Younger Patients Are Vulnerable:** Younger age correlates with higher reversion, possibly because early-onset dementia is rarer and clinicians may walk a premature dementia label back.
-4. **Comorbidity Load Influences Coding:** Higher CCI scores raise reversion odds, perhaps because complex medical histories blur cognitive assessments.
-5. **Clinic Setting Shapes Certainty:** Diagnoses made in dedicated dementia clinics or primary-care settings reverted more often than those made in the ER or “other specialty” clinics, which argues for specialist input and longitudinal follow-up.
+|Figure 3: Training- and test-set odds ratios for models using cardiovascular scores or CCI. Red markers indicate p < 0.05; the odds-ratio axes are logarithmic.|
+|:---:|
+|![Logistic regression coefficients for demographic and clinical models](fig3.webp)|
 
-## Practical Takeaways for Clinicians & Health Systems
+## What the ICD Histories Added
 
-* **Implement Structured Follow-Up Protocols** after a dementia diagnosis, especially for younger and Spanish-speaking patients, to confirm or refine the label.
-* **Standardize Cognitive Assessment Documentation** (e.g., MoCA, MMSE) in the EHR to reduce reliance on billing codes alone.
-* **Invest in Language-Concordant Care:** interpreter services, bilingual clinicians, and culturally adapted screening tools can mitigate misclassification.
-* **Use Predictive Alerts:** a lightweight logistic-regression-based risk score (using age, language, CVD risk, CCI, and a handful of high-impact ICD blocks) could flag patients at elevated reversion risk for multidisciplinary review.
-* **Audit Coding Practices** regularly to ensure that ICD transitions reflect genuine clinical change rather than administrative convenience.
+The descriptive analysis found **39 ICD blocks** that differed significantly between groups after multiple-hypothesis correction.
+
+* **More prevalent among reverters:** dizziness/giddiness, depressive episodes, osteoarthritis, cataracts, dorsalgia, and unspecified injuries.
+* **More prevalent among patients who remained diagnosed with dementia:** chronic kidney disease, atrial fibrillation, fluid/electrolyte disorders, abnormal lung imaging, long-term drug therapy, brain disorders, and respiratory disorders.
+
+The full ICD-history logistic model selected 116 predictors; 12 were statistically significant in the held-out test set. Higher odds of reversion were associated with atherosclerosis, fever, mobility problems, immunization encounters, unspecified injuries, diverticular disease, and other spondylopathies. These are not evidence that the conditions caused reversion. Instead, the broad pattern suggests that nonspecific symptoms, functional problems, and ongoing clinical contact can coincide with less stable diagnostic labeling. Chronic and advanced systemic illnesses tended to align with a stable dementia diagnosis.
+
+|Figure 4: ICD-history model coefficients in the test and training sets. Many held-out confidence intervals are wide, reflecting limited power for individual diagnosis-level associations.|
+|:---:|
+|![ICD history logistic regression coefficients](fig4.webp)|
+
+## Model Performance: Modest Discrimination, Useful Interpretability
+
+|Model family|AUROC|AUPRC|Performance after F1 threshold tuning|
+|:---|:---|:---|:---|
+|Logistic regression|0.69–0.74 across specifications|0.23–0.32|Sensitivity 0.65–0.75; F1 0.34–0.36|
+|Random forest|0.72–0.74 across specifications|0.27–0.31|Sensitivity 0.29–0.56; precision 0.26–0.39; F1 up to 0.38|
+
+The best language-adjusted curves shown in the figures were similar: the ICD-history logistic model reached AUROC 0.732 and AUPRC 0.310, while the corresponding random forest reached AUROC 0.739 and AUPRC 0.313. The random forest's tuned F1 was slightly higher, but not enough to overturn the practical advantage of interpretable coefficients.
+
+At the default 0.5 probability threshold, the models produced no positive predictions. Tuning thresholds on the training data improved minority-class detection, but the modest precision–recall performance argues against treating these models as ready-made individual risk scores.
+
+|Figure 5: Logistic-regression ROC and precision–recall curves. The ICD-history model performed best, but precision remained modest under class imbalance.|
+|:---:|
+|![Logistic regression ROC and precision recall curves](fig5.webp)|
+
+|Figure 6: Random-forest ROC and precision–recall curves. Discrimination was comparable to logistic regression across matched feature sets.|
+|:---:|
+|![Random forest ROC and precision recall curves](fig6.webp)|
+
+## What This Means for Practice
+
+1. **A later MCI diagnosis should prompt diagnostic review, not assumptions.** It may reflect premature dementia labeling, an incorrect MCI label, fluctuating presentation, or a specialist's revised assessment.
+2. **Language-concordant care deserves attention.** The Spanish-language association raises concern about communication and diagnostic assessment, but this study did not measure interpreter use, provider language proficiency, or cultural concordance, so it cannot identify the mechanism.
+3. **Clinical complexity matters.** Cardiovascular risk and overall comorbidity burden may make cognitive assessment and diagnostic labeling harder, particularly when other conditions compete for clinical attention.
+4. **Follow-up shapes what we observe.** Reverters had greater subsequent health-system engagement, making diagnostic revision partly a function of opportunities to revisit the label.
+5. **Use the predictors to improve processes, not to automate judgment.** The authors' interpretation is that these signals are more useful for locating where diagnostic pathways need strengthening than for deploying an individual-level prediction tool.
 
 ## Limitations Worth Noting
 
-* **Billing-Code Reliance:** ICD entries may miss nuance, especially for subtle cognitive changes.
-* **Single-Site Cohort:** UCSF’s academic environment limits generalizability to community hospitals or rural systems.
-* **Unstructured Data Excluded:** Narrative notes, neuropsychological test scores, and medication records could refine the phenotype but were not incorporated.
-* **Class Imbalance:** The 13.7% reversion rate constrained model precision; future work should explore oversampling or synthetic minority techniques.
+* **No diagnostic gold standard:** Billing-oriented EHR fields cannot establish whether the dementia diagnosis, the MCI diagnosis, or both were clinically correct.
+* **No notes or formal cognitive assessments:** The structured data could not distinguish true cognitive improvement from diagnostic uncertainty or coding variation.
+* **Downstream consequences remain unknown:** The study did not assess whether reversion changed treatment, outcomes, or subsequent healthcare use.
+* **Important context was unmeasured:** Medications, provider language proficiency, cultural concordance, family support, and individual education history were unavailable. Neighborhood education and home value are imperfect socioeconomic proxies.
+* **Limited test-set power:** Only 13.7% of patients reverted, and some training-set associations did not replicate with statistical significance in testing.
+* **Single-system cohort:** UCSF's urban, tertiary-care population may not represent other systems, and longitudinal histories may be incomplete for patients who received much of their care elsewhere.
 
-## Future Directions
+## Bottom Line
 
-* **Multi-Center Validation:** Apply the same pipeline to other health systems (e.g., Kaiser, VA) to test external robustness.
-* **Natural-Language Processing:** Extract cognitive assessment scores and clinician impressions from progress notes to complement structured codes.
-* **Intervention Trials:** Randomize flagged high-risk patients to intensified diagnostic review versus usual care to measure impact on diagnostic stability and downstream outcomes (e.g., medication appropriateness, care planning).
+Diagnostic reversion from dementia to MCI affected **13.7%** of this real-world cohort, and nearly three-quarters of reverters later returned to a dementia diagnosis. Age, preferred language, care setting, cardiovascular risk, comorbidity burden, and pre-existing diagnostic patterns all carried signal.
 
+The central finding is not simply that diagnoses are sometimes “wrong.” It is that the MCI–dementia boundary can be unstable in routine care, and that instability is socially and clinically patterned. Better diagnostic pathways need longitudinal follow-up, language-concordant assessment, clinical notes and cognitive measures, and validation across health systems.
+
+*Figures reproduced from Miramontes et al. (2026), [Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring](https://doi.org/10.1002/dad2.70523), under the CC BY-NC 4.0 license.*
