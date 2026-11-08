@@ -36,6 +36,8 @@ description: "The resume of Hunter Mills, detailing his career as a Machine Lear
 
 ## Publications
 
+Farrand, E. D., **Mills, H.**, Radhakrishnan, L., Ieong, M., Gologorskaya, O., & Butte, A. (2026). [Real-World Differences in ILD Diagnosis, Management, and Outcomes Across Subspecialty and Non-Specialty Care Settings: Clinical and Health System Implications](/posts/ild_care_settings/). American Journal of Respiratory and Critical Care Medicine, 212(Supplement_1), aamag162.2858.
+
 Vossler, K., Kopp, Z., Stumpf, N., Brender, T., McGowan, S. K., Kim, S., ... & Cobert, J. (2026). [Clinician self-referentiality: factors associated with author pronoun use in critically ill patient notes](/posts/clinical_self_ref). CHEST Critical Care, 100294.
 
 Brender, T. D., Stumpf, N., Vossler, K., Kim, S., **Mills, H.**, Lee, A., ... & Cobert, J. (2026). [How ICU clinicians document ‘Futility’: A 10-year analysis of critical care notes using natural language processing notes](/posts/futility). Journal of Critical Care, 94, 155526.
