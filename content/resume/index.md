@@ -36,6 +36,8 @@ description: "The resume of Hunter Mills, detailing his career as a Machine Lear
 
 ## Publications
 
+Farrand, E., **Mills, H.**, Radhakrishnan, L., Ieong, M., Lee, A., Gologorskaya, O., & Butte, A. (2026). [Subspecialty ILD Clinic Care is Associated with More Guideline-Concordant Evaluation and Improved Outcomes Compared to Other Ambulatory Settings: A Retrospective Cohort Study](/posts/ild_clinic_care/). CHEST, S0012-3692(26)06937-0.
+
 Farrand, E. D., **Mills, H.**, Radhakrishnan, L., Ieong, M., Gologorskaya, O., & Butte, A. (2026). [Real-World Differences in ILD Diagnosis, Management, and Outcomes Across Subspecialty and Non-Specialty Care Settings: Clinical and Health System Implications](/posts/ild_care_settings/). American Journal of Respiratory and Critical Care Medicine, 212(Supplement_1), aamag162.2858.
 
 Vossler, K., Kopp, Z., Stumpf, N., Brender, T., McGowan, S. K., Kim, S., ... & Cobert, J. (2026). [Clinician self-referentiality: factors associated with author pronoun use in critically ill patient notes](/posts/clinical_self_ref). CHEST Critical Care, 100294.
