@@ -64,6 +64,7 @@ The GPU bootstrap additionally preps the NVIDIA container toolkit, installs the 
 {{< mermaid >}}
 %%{init: {
   "theme": "base",
+  "htmlLabels": false,
   "themeVariables": {
     "fontFamily": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
     "fontSize": "16px",
@@ -77,6 +78,7 @@ The GPU bootstrap additionally preps the NVIDIA container toolkit, installs the 
   },
   "flowchart": {
     "curve": "basis",
+    "htmlLabels": false,
     "nodeSpacing": 40,
     "rankSpacing": 45
   }

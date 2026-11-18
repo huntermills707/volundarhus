@@ -61,6 +61,7 @@ The cleaner design is to give the window manager its own key:
 {{< mermaid >}}
 %%{init: {
   "theme": "base",
+  "htmlLabels": false,
   "themeVariables": {
     "fontFamily": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
     "fontSize": "16px",
@@ -74,6 +75,7 @@ The cleaner design is to give the window manager its own key:
   },
   "flowchart": {
     "curve": "basis",
+    "htmlLabels": false,
     "nodeSpacing": 40,
     "rankSpacing": 45
   }
