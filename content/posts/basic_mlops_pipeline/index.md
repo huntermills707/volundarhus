@@ -61,6 +61,39 @@ The GPU bootstrap additionally preps the NVIDIA container toolkit, installs the 
 
 ## The full loop
 
+{{< mermaid >}}
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+    "fontSize": "16px",
+    "primaryColor": "#182840",
+    "primaryTextColor": "#e6edf3",
+    "primaryBorderColor": "#79c0ff",
+    "lineColor": "#8bb8e8",
+    "clusterBkg": "#142237",
+    "clusterBorder": "#4b6785",
+    "edgeLabelBackground": "#1e2d47"
+  },
+  "flowchart": {
+    "curve": "basis",
+    "nodeSpacing": 40,
+    "rankSpacing": 45
+  }
+}}%%
+flowchart TD
+    A["Train<br/>DistilBERT"] --> B["Register<br/>MLflow"]
+    B --> C["Export and stage<br/>ONNX / TensorRT"]
+    C --> D["Serve stable<br/>Triton"]
+    D --> E["Canary<br/>5% → 25% → 50%"]
+    E --> F{"Prometheus<br/>gates pass?"}
+    F -->|Yes| G["Promote<br/>100% traffic"]
+    F -->|No| H["Roll back<br/>to stable"]
+    D --> I["FastAPI UI<br/>Prediction and input logs"]
+    I --> J["User corrections<br/>Jigsaw-schema CSV"]
+    J -.-> A
+{{< /mermaid >}}
+
 **Train and register.** Training runs on the host against the in-cluster MLflow over a port-forward. With the promotion gate enabled, a run only gets registered in the model registry if it beats the current production metric:
 
 ```bash

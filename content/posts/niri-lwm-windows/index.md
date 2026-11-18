@@ -58,21 +58,42 @@ I could disable Windows locking, try to intercept system shortcuts, and audit ev
 
 The cleaner design is to give the window manager its own key:
 
-```text
-  Right-thumb Win key
-            |
-            v
-           F24
-            |
-          KVM switch
-       /            \
-      /              \
- Linux               Windows
- keyd                LeopardWM
- F24 -> Super        F24 is a held modifier
-      |                    |
-    niri Mod           LeopardWM Mod
-```
+{{< mermaid >}}
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+    "fontSize": "16px",
+    "primaryColor": "#182840",
+    "primaryTextColor": "#e6edf3",
+    "primaryBorderColor": "#79c0ff",
+    "lineColor": "#8bb8e8",
+    "clusterBkg": "#142237",
+    "clusterBorder": "#4b6785",
+    "edgeLabelBackground": "#1e2d47"
+  },
+  "flowchart": {
+    "curve": "basis",
+    "nodeSpacing": 40,
+    "rankSpacing": 45
+  }
+}}%%
+flowchart TD
+    A["Right-thumb Win key"] --> B["F24"]
+    B --> C{"KVM switch"}
+    C --> L
+    C --> W
+
+    subgraph L["Linux"]
+        direction TB
+        D["keyd<br/>F24 → Super"] --> E["niri Mod"]
+    end
+
+    subgraph W["Windows"]
+        direction TB
+        F["LeopardWM<br/>F24 is a held modifier"] --> G["LeopardWM Mod"]
+    end
+{{< /mermaid >}}
 
 The keyboard sends F24 on both computers. What happens next is intentionally OS-specific:
 
