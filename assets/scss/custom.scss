@@ -38,9 +38,10 @@ canvas.backgroundsketch {
   padding: 0.05em 1em 1em;
 }
 
-.social-card {
+.centered .about ul.social-card {
   @include frosted-panel;
-  padding: 1em;
+  display: flex;
+  padding: 1em 1em 0.5em;
 }
 
 .avatar img {
@@ -53,6 +54,11 @@ canvas.backgroundsketch {
   -webkit-backdrop-filter: blur(5px);
   box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.6);
   z-index: 2;
+
+  @media only screen and (min-width: 768.1px) {
+    display: flex;
+    align-items: center;
+  }
 
   .navigation-list {
     @media only screen and (max-width: 768px) {
