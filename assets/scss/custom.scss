@@ -178,3 +178,79 @@ body.colorscheme-dark .content .post .post-meta .tags .tag {
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .content .page {
+    article {
+      padding: 1.2rem;
+    }
+
+    header h1 {
+      margin: 1.2rem 0.4rem 0;
+    }
+
+    h2 {
+      margin: 2.4rem 0.4rem 1.2rem;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    table {
+      display: block;
+      margin: 0 0 2.4rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      border-bottom: 1px solid rgba(121, 192, 255, 0.2);
+      column-gap: 1.2rem;
+      display: grid;
+      grid-template-columns: 5.6rem minmax(0, 1fr);
+      padding: 1.2rem 0;
+    }
+
+    tr:last-child {
+      border-bottom: 0;
+    }
+
+    td {
+      display: block;
+      grid-column: 2;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      padding: 0.2rem 0;
+      text-align: left;
+    }
+
+    td:first-child {
+      grid-column: 1;
+      grid-row: 1;
+      padding: 0;
+    }
+
+    td:nth-child(2) {
+      font-weight: 600;
+    }
+
+    td:nth-child(n + 4) {
+      font-size: 1.4rem;
+    }
+
+    td img {
+      display: block;
+      height: auto;
+      width: 5.6rem;
+    }
+  }
+}
