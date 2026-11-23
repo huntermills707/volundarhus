@@ -179,6 +179,165 @@ body.colorscheme-dark .content .post .post-meta .tags .tag {
   }
 }
 
+// Compact call-to-action card for an interactive project demo.
+.content article .app-demo {
+  align-items: center;
+  background-color: rgba(15, 22, 38, 0.55);
+  border: 1px solid rgba(121, 192, 255, 0.25);
+  border-radius: 0.6rem;
+  display: flex;
+  gap: 1.2rem;
+  margin: 2rem auto;
+  max-width: 38rem;
+  padding: 1.2rem 1.4rem;
+  text-decoration: none;
+  text-shadow: none;
+  transition: border-color 120ms ease, background-color 120ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(24, 40, 64, 0.9);
+    border-color: #79c0ff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #79c0ff;
+    outline-offset: 3px;
+  }
+
+  > .fa-solid {
+    color: #79c0ff;
+    flex: 0 0 auto;
+  }
+
+  .app-demo-icon {
+    font-size: 2.4rem;
+  }
+
+  .app-demo-logo {
+    flex: 0 0 5rem;
+    max-height: 3.2rem;
+    object-fit: contain;
+    width: 5rem;
+  }
+}
+
+.app-demo-text {
+  flex: 1;
+
+  strong,
+  span {
+    display: block;
+  }
+
+  strong {
+    color: #e6edf3;
+    font-size: 1.6rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    opacity: 0.8;
+  }
+}
+
+// The 20 x 20 advantage grid stays a table on mobile instead of using the
+// stacked-card treatment applied to ordinary post tables below.
+.dice-grid-scroll {
+  margin: 1.6rem 0 3.2rem;
+  max-height: 75vh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  width: 100%;
+
+  &:focus-visible {
+    outline: 2px solid #79c0ff;
+    outline-offset: 2px;
+  }
+}
+
+body.colorscheme-dark .content article .dice-grid {
+  border-collapse: separate;
+  border-spacing: 0;
+  display: table;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 0 auto;
+  min-width: 64rem;
+  table-layout: fixed;
+  text-align: center;
+  text-shadow: none;
+  width: 64rem;
+
+  thead {
+    display: table-header-group;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  tr {
+    border: 0;
+    display: table-row;
+    padding: 0;
+  }
+
+  th,
+  td {
+    border: 0;
+    border-bottom: 1px solid rgba(121, 192, 255, 0.12);
+    border-right: 1px solid rgba(121, 192, 255, 0.12);
+    display: table-cell;
+    font-size: inherit;
+    grid-column: auto;
+    min-width: 0;
+    overflow: visible;
+    padding: 0.2rem 0.25rem;
+    text-align: center;
+  }
+
+  th {
+    background-color: #182840;
+    font-weight: 600;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    width: auto;
+    z-index: 2;
+  }
+
+  tbody th {
+    left: 0;
+    position: sticky;
+    z-index: 1;
+  }
+
+  tr:first-child th:first-child,
+  tbody th {
+    width: 5rem;
+  }
+
+  thead th:first-child {
+    left: 0;
+    z-index: 3;
+  }
+
+  tr th:last-child,
+  tr td:last-child {
+    border-right: 0;
+  }
+
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .content .page {
     article {

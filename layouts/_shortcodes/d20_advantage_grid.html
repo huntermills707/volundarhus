@@ -1,0 +1,23 @@
+{{ $dice := seq 20 }}
+<div class="dice-grid-scroll" role="region" aria-label="Scrollable advantage outcomes for two d20s" tabindex="0">
+  <table class="dice-grid">
+    <caption class="sr-only">Advantage outcomes: the maximum of the first d20 row and second d20 column</caption>
+    <thead>
+      <tr>
+        <th scope="col">d1 / d2</th>
+        {{ range $dice }}<th scope="col">{{ . }}</th>{{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $dice }}
+        {{ $row := . }}
+        <tr>
+          <th scope="row">{{ $row }}</th>
+          {{ range $dice }}
+            <td>{{ if ge $row . }}{{ $row }}{{ else }}{{ . }}{{ end }}</td>
+          {{ end }}
+        </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
