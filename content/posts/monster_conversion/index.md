@@ -19,7 +19,7 @@ The naive answer is to fit the most flexible model available and let it spit out
 
 So the converter uses small linear models. Every result can be written as a short formula over a handful of inputs, like the source monster's HP, the target level or CR, and the intended 4e role. With no computer nearby, you can apply the same rules by hand.
 
-[![py.cafe](https://py.cafe/logos/pycafe_logo.png)](https://py.cafe/app/huntermills707/dnd-monster-stat-converter) <-- Py.Cafe Demo App.
+{{< app_demo site="pycafe" url="https://py.cafe/app/huntermills707/dnd-monster-stat-converter" description="Convert monsters between 4e and 5e on Py.Cafe" >}}
 
 The app converts in both directions and covers level/CR, HP, AC, attack bonus, damage, all six ability scores, 4e defenses, and 5e saving throws. Its **Explain** tab shows the fitted equation and validation results for every stat.
 

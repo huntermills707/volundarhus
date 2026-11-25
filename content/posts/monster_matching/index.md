@@ -59,7 +59,7 @@ flowchart TD
     L --> N
 {{< /mermaid >}}
 
-[![py.cafe](https://py.cafe/logos/pycafe_logo.png)](https://py.cafe/app/huntermills707/dnd-monster-stat-converter) <-- Py.Cafe Demo App.
+{{< app_demo site="pycafe" url="https://py.cafe/app/huntermills707/dnd-monster-stat-converter" description="Convert monsters between 4e and 5e on Py.Cafe" >}}
 
 This post is about the dataset behind that app. The conversion equations come in the next post.
 

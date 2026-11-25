@@ -14,7 +14,7 @@ series = []
 ## Introduction
 Every tabletop RPG (TTRPG) starts with a roll of the dice. Whether you’re generating heroic ability scores for a new character or handing out modest stats to a legion of NPC followers, the distribution of those rolls shapes the entire campaign. Too much variance can leave players feeling under-powered; too little can make every character feel the same.
 
-[![py.cafe](https://py.cafe/logos/pycafe_logo.png)](https://py.cafe/app/huntermills707/dash-dice-roll-probability) <-- Py.Cafe Demo App.
+{{< app_demo site="pycafe" url="https://py.cafe/app/huntermills707/dash-dice-roll-probability" description="Explore dice-roll probabilities on Py.Cafe" >}}
 
 To explore the impact of different rolling procedures I built a Plotly Dash app (see the source files app.py, stats.py, modifiers.py, moments.py, etc.). The app lets you:
 

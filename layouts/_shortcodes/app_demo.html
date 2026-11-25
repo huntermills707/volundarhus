@@ -1,10 +1,26 @@
+{{/* Pretty link card to an external app demo.
+
+Usage:
+  {{< app_demo site="pycafe" url="..." description="..." >}}
+  {{< app_demo site="render" url="..." title="..." description="..." >}}
+  {{< app_demo url="..." logo="..." logo_alt="..." >}}       (any other site)
+  {{< app_demo url="..." icon="fa-rocket" >}}                (Font Awesome icon)
+
+Known sites carry preset branding below; explicit title/description/logo/icon
+params always win, so unseen sites need no shortcode changes. */}}
+{{ $presets := dict
+  "pycafe" (dict "logo" "https://py.cafe/logos/pycafe_logo.png" "logo_alt" "Py.Cafe")
+  "render" (dict "logo" "/images/render.svg" "logo_alt" "Render")
+}}
+{{ $preset := index $presets (.Get "site" | default "") | default dict }}
 {{ $title := .Get "title" | default "Try the interactive app" }}
 {{ $description := .Get "description" }}
-{{ $icon := .Get "icon" | default "fa-dice-d20" }}
-{{ $logo := .Get "logo" }}
+{{ $icon := .Get "icon" | default ($preset.icon | default "fa-dice-d20") }}
+{{ $logo := .Get "logo" | default $preset.logo }}
+{{ $logoAlt := .Get "logo_alt" | default ($preset.logo_alt | default "") }}
 <a class="app-demo" href="{{ .Get "url" }}" target="_blank" rel="noopener">
   {{ if $logo }}
-    <img class="app-demo-logo" src="{{ $logo }}" alt="{{ .Get "logo_alt" }}">
+    <img class="app-demo-logo" src="{{ $logo }}" alt="{{ $logoAlt }}">
   {{ else }}
     <i class="fa-solid {{ $icon }} app-demo-icon" aria-hidden="true"></i>
   {{ end }}

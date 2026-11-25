@@ -18,7 +18,7 @@ Two older posts on this site cover the [dice-roll visualizer](/posts/dice_rolls)
 
 This post is the math I skipped. What "deterministic" actually means when a computer says it, when I'd rather simulate than count, and two results I use at the table: the 20 × 20 grid that completely explains 5e advantage and disadvantage, and the combinations-versus-permutations trick that turns "roll seven stats, drop the lowest" from 268 million ordered arrays into 170,544 weighted multisets.
 
-{{< app_demo url="https://py.cafe/app/huntermills707/dash-dice-roll-probability" description="Explore dice probabilities on Py.Cafe" logo="https://py.cafe/logos/pycafe_logo.png" logo_alt="Py.Cafe" >}}
+{{< app_demo site="pycafe" url="https://py.cafe/app/huntermills707/dash-dice-roll-probability" description="Explore dice probabilities on Py.Cafe" >}}
 
 ## Deterministic Means Counting
 

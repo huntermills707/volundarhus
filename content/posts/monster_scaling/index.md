@@ -23,7 +23,7 @@ So the difficulty scaler follows a different rule:
 
 **Don't replace the monster with an average. Move it along the edition's average scaling curve.**
 
-[![py.cafe](https://py.cafe/logos/pycafe_logo.png)](https://py.cafe/app/huntermills707/dnd-monster-scaling) <-- Py.Cafe Demo App.
+{{< app_demo site="pycafe" url="https://py.cafe/app/huntermills707/dnd-monster-scaling" description="Scale monsters to a new difficulty on Py.Cafe" >}}
 
 Choose 4e or 5e, enter the current level/CR and any stats you want to scale, then choose a new level/CR. The app shows each new value along with its change from the original, and its **Method** tab lists every fitted curve, sample size, and R².
 
