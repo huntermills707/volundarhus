@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://www.tandfonline.com/doi/full/10.1080/09546634.2025.2555983)
+{{< app_demo site="paper" url="https://www.tandfonline.com/doi/full/10.1080/09546634.2025.2555983" description="Published in the Journal of Dermatological Treatment" >}}
 
 ## Why we built SkinTracker
 Clinical trials for atopic dermatitis (AD) still rely on in-person visits, which drive up costs, limit geographic diversity, and create barriers for patients who can’t easily travel. Our goal was simple: test whether a smartphone-based app could capture disease severity as reliably as a clinician-examined photograph or a DSLR-grade image, while keeping participants engaged over an eight-week hybrid study.

@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://pubmed.ncbi.nlm.nih.gov/39559986/)
+{{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/39559986/" description="Published in JAMA Network Open" >}}
 
 ## Why Uncertainty Matters
 

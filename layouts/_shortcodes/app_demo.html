@@ -11,9 +11,10 @@ params always win, so unseen sites need no shortcode changes. */}}
 {{ $presets := dict
   "pycafe" (dict "logo" "https://py.cafe/logos/pycafe_logo.png" "logo_alt" "Py.Cafe")
   "render" (dict "logo" "/images/render.svg" "logo_alt" "Render")
+  "paper" (dict "icon" "fa-file-lines" "title" "Read the full paper")
 }}
 {{ $preset := index $presets (.Get "site" | default "") | default dict }}
-{{ $title := .Get "title" | default "Try the interactive app" }}
+{{ $title := .Get "title" | default ($preset.title | default "Try the interactive app") }}
 {{ $description := .Get "description" }}
 {{ $icon := .Get "icon" | default ($preset.icon | default "fa-dice-d20") }}
 {{ $logo := .Get "logo" | default $preset.logo }}

@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC11638541/)
+{{< app_demo site="paper" url="https://pmc.ncbi.nlm.nih.gov/articles/PMC11638541/" description="Published in CHEST" >}}
 
 
 ## Why a Study About Metaphors Belongs in a Tech-Heavy Blog

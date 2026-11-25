@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://doi.org/10.1002/dad2.70523)
+{{< app_demo site="paper" url="https://doi.org/10.1002/dad2.70523" description="Published in Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring" >}}
 
 ## Why Look at “Diagnostic Reversion”?
 

@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false 
 date = 2026-02-11T20:41:22-08:00
 title = "All That Shines Is Not Gold: Maintaining Scientific Rigor When Evaluating, Interpreting, and Reviewing Studies Using Large Language Models"
 description = "A summary of principles for keeping scientific rigor when using large language models in research: methodological transparency, secure handling of protected health information, quantitative validation with objective metrics, active bias auditing, and clear reporting of computational resources. The core challenges are black-box opacity, hallucinations, and how fast the tooling goes stale."
@@ -10,6 +10,8 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
+
+{{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/41364426/" description="Published in Anesthesiology — abstract via PubMed" >}}
 
 ## Why This Matters
 

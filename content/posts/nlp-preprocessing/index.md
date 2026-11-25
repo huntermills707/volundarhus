@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 enableDisqus = false
 +++
-[Publication Link](https://pubmed.ncbi.nlm.nih.gov/34136824/)
+{{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/34136824/" description="Abstract via PubMed" >}}
 ## Why This Matters
 Predictive models built on intensive-care unit (ICU) clinical notes are increasingly used to forecast patient mortality. But the pre-processing of those free-text notes (cleaning, tokenizing, stemming, TF-IDF weighting, n-gram creation, etc.) is usually treated as a routine step. This study asks a simple question: does the choice of note-preparation strategy actually matter for model performance?
 

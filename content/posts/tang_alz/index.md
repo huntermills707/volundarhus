@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://www.nature.com/articles/s43587-024-00573-8)
+{{< app_demo site="paper" url="https://www.nature.com/articles/s43587-024-00573-8" description="Published in Nature Aging" >}}
 
 ## Introduction
 

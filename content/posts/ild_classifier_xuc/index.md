@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 +++
 
-[Publication Link](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(26)00037-4/fulltext)
+{{< app_demo site="paper" url="https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(26)00037-4/fulltext" description="Published in eClinicalMedicine" >}}
 
 ## Why This Matters
 

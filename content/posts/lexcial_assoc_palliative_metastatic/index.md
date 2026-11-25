@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://www.nature.com/articles/s41598-025-01828-z)
+{{< app_demo site="paper" url="https://www.nature.com/articles/s41598-025-01828-z" description="Published in Scientific Reports" >}}
 
 ## Why Look at Words, Not Just Numbers?
 

@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC10363571/)
+{{< app_demo site="paper" url="https://pmc.ncbi.nlm.nih.gov/articles/PMC10363571/" description="Full text via PubMed Central" >}}
 
 ## Why this matters
 

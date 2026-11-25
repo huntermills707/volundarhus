@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://academic.oup.com/ajrccm/article/207/10/1398/8428048)
+{{< app_demo site="paper" url="https://academic.oup.com/ajrccm/article/207/10/1398/8428048" description="Published in the American Journal of Respiratory and Critical Care Medicine" >}}
 
 ## Why this work matters
 Identifying patients with rare diseases such as interstitial lung disease (ILD) from electronic health records (EHRs) is notoriously hard. Traditional approaches rely on diagnostic codes (ICD-10) that miss many cases, limiting epidemiologic studies and trial recruitment. We demonstrate that a carefully engineered machine-learning (ML) pipeline can accurately flag ILD cases by combining structured data (billing codes, pulmonary function tests) with unstructured clinical notes processed via natural language processing (NLP).

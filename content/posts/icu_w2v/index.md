@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://journal.chestnet.org/article/S0012-3692(24)00007-2/abstract)
+{{< app_demo site="paper" url="https://journal.chestnet.org/article/S0012-3692(24)00007-2/abstract" description="Published in CHEST" >}}
 
 ## Why This Study Matters
 Clinical documentation is the backbone of modern intensive-care practice, yet the language clinicians use can quietly reflect and reinforce societal biases. While overtly hateful phrasing is rare, implicit bias (the unconscious association of certain racial or ethnic descriptors with stigmatizing terms) can shape how patients are perceived and treated. As machine-learning (ML) models increasingly ingest electronic health-record (EHR) notes for predictive analytics, any hidden bias in those notes may be amplified, jeopardizing algorithmic fairness and patient equity.

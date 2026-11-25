@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://www.nature.com/articles/s41746-025-01975-7)
+{{< app_demo site="paper" url="https://www.nature.com/articles/s41746-025-01975-7" description="Published in npj Digital Medicine" >}}
 
 ## Introduction
 Fairness assessments for medical AI, especially devices like pulse oximeters and dermatology classifiers, often rely on subjective skin-tone scales such as Fitzpatrick and Monk. Our recent prospective study, published in npj Digital Medicine (2025), shows these scales are far from reliable. Below I walk through the study and what it means for anyone building or auditing healthcare AI systems.

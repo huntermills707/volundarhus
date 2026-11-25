@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 +++
 
-[Publication Link](https://www.sciencedirect.com/science/article/pii/S0883944126001048)
+{{< app_demo site="paper" url="https://www.sciencedirect.com/science/article/pii/S0883944126001048" description="Published in the Journal of Critical Care" >}}
 
 In the Intensive Care Unit (ICU), "medical futility" is a lightning rod for ethical conflict. Clinicians often estimate that 20–40% of patients receive treatments they perceive as non-beneficial. Yet despite how common these conflicts are, the word "futility" itself almost never appears in the medical record.
 

@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://doi.org/10.1016/j.chstcc.2026.100294)
+{{< app_demo site="paper" url="https://doi.org/10.1016/j.chstcc.2026.100294" description="Published in CHEST Critical Care" >}}
 
 ## Why Pronouns?
 

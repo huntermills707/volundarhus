@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2840897)
+{{< app_demo site="paper" url="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2840897" description="Published in JAMA Network Open" >}}
 
 
 

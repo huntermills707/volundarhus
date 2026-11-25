@@ -10,7 +10,7 @@ categories = ["Publication Summary"]
 externalLink = ""
 series = []
 +++
-[Publication Link](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2827801)
+{{< app_demo site="paper" url="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2827801" description="Published in JAMA Network Open" >}}
 
 ## Why this study matters
 Traumatic brain injury is usually treated as an acute event, but the consequences can stretch far beyond the initial hospitalization. Our recent cohort analysis, published in JAMA Network Open (Dec 2024), adds a large, geographically distinct dataset to the literature. By linking five University of California health-system records (2013-2022) with a previously examined Massachusetts cohort, we get a clearer picture of how a single TBI episode reshapes a patient’s health trajectory for up to a decade.
