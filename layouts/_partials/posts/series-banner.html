@@ -1,0 +1,8 @@
+{{- /* "Part N of M" line under the post meta; links to the full list in the footer. */ -}}
+{{- range partial "posts/series-info.html" . }}
+<p class="series-banner">
+  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+  <a href="#series-{{ .term.Name | anchorize }}">Part {{ add .index 1 }} of {{ len .pages }}</a>
+  in <a href="{{ .term.RelPermalink }}">{{ .term.LinkTitle }}</a>
+</p>
+{{- end }}

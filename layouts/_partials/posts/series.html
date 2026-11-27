@@ -1,0 +1,42 @@
+{{- /*
+  Overrides the theme's "See also in" box: the full series in order with
+  the current post marked, plus previous/next links.
+*/ -}}
+{{- range partial "posts/series-info.html" . }}
+{{- $pages := .pages }}
+{{- $i := .index }}
+{{- $id := printf "series-%s" (.term.Name | anchorize) }}
+<nav class="series-nav" id="{{ $id }}" aria-labelledby="{{ $id }}-title">
+  <p class="series-nav-title" id="{{ $id }}-title">
+    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+    Series: <a href="{{ .term.RelPermalink }}">{{ .term.LinkTitle }}</a>
+  </p>
+  <ol>
+    {{- range $j, $p := $pages }}
+    {{- if eq $j $i }}
+    <li class="current" aria-current="page">{{ $p.Title }}</li>
+    {{- else }}
+    <li><a href="{{ $p.Params.externalLink | default $p.RelPermalink }}">{{ $p.Title }}</a></li>
+    {{- end }}
+    {{- end }}
+  </ol>
+  <div class="series-pager">
+    {{- if gt $i 0 }}
+    {{- with index $pages (sub $i 1) }}
+    <a class="series-prev" href="{{ .Params.externalLink | default .RelPermalink }}">
+      <span>&larr; Previous</span>
+      <strong>{{ .Title }}</strong>
+    </a>
+    {{- end }}
+    {{- end }}
+    {{- if lt (add $i 1) (len $pages) }}
+    {{- with index $pages (add $i 1) }}
+    <a class="series-next" href="{{ .Params.externalLink | default .RelPermalink }}">
+      <span>Next &rarr;</span>
+      <strong>{{ .Title }}</strong>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+</nav>
+{{- end }}

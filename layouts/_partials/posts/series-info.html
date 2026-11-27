@@ -1,0 +1,19 @@
+{{- /*
+  Returns one entry per series this page belongs to (with 2+ posts):
+  dict "term" (series term page) "pages" (series posts, oldest first)
+  "index" (this page's 0-based position in "pages").
+  Order is by date, so publish parts in sequence.
+*/ -}}
+{{- $out := slice -}}
+{{- $self := .RelPermalink -}}
+{{- range .GetTerms "series" -}}
+  {{- $pages := .Pages.ByDate -}}
+  {{- $idx := -1 -}}
+  {{- range $i, $p := $pages -}}
+    {{- if eq $p.RelPermalink $self }}{{ $idx = $i }}{{ end -}}
+  {{- end -}}
+  {{- if and (gt (len $pages) 1) (ge $idx 0) -}}
+    {{- $out = $out | append (dict "term" . "pages" $pages "index" $idx) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}
