@@ -6,10 +6,10 @@ title = "Counting Dice Instead of Rolling Them: Exact Probabilities for TTRPG Me
 description = "A companion post to the dice-roll and stat-generation tools. Every distribution the app shows comes from exact enumeration rather than Monte Carlo sampling. I explain why that works, when I'd simulate instead, walk through the full 20 x 20 grid behind 5e advantage and disadvantage, and show how iterating over combinations instead of permutations shrinks roll-seven-stats-drop-the-lowest from 268 million ordered arrays to 170,544 buckets."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["probability", "python"]
+categories = ["TTRPG"]
 externalLink = ""
-series = []
+series = ["TTRPG Dice Math"]
 +++
 
 ## Introduction

@@ -5,8 +5,8 @@ title = "Validity of two subjective skin tone scales and its implications on hea
 description = "This post summarizes a prospective study testing the reliability of the Fitzpatrick and Monk skin-tone scales for medical AI fairness audits. Three annotators rated 810 facial photographs from 90 hospitalized veterans; inter-rater agreement was only moderate, and annotators systematically scored patients lighter than patients scored themselves. The authors recommend using multiple diverse annotators, supplementing subjective scales with objective melanin measurements, and reporting uncertainty intervals to avoid masking or creating apparent algorithmic disparities."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["bias", "health-equity", "machine-learning", "dermatology"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

@@ -5,8 +5,8 @@ title = "A Full-Loop MLOps Platform on Two Homelab Kubernetes Clusters"
 description = "A walkthrough of a reproducible MLOps platform built from scratch: a DistilBERT toxicity classifier is trained, registered in MLflow, exported to ONNX and TensorRT, and served on two k3s clusters (a CPU laptop and a 2-GPU workstation) running identical manifests. KServe, Triton, KEDA autoscaling on queue depth, and Argo Rollouts canaries with Prometheus analysis gates handle the path from training run to production traffic, while a web UI feeds user corrections back into training data. The post covers the architecture, the canary/promotion flow, and the debugging war stories (NordVPN vs. k3s DNS, an MLflow image missing boto3, and a KServe ingress that silently 404s)."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "MLOps"]
+tags = ["mlops", "kubernetes", "machine-learning", "nlp", "python"]
+categories = ["Data Science"]
 externalLink = ""
 series = []
 +++

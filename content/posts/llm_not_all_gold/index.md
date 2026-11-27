@@ -5,8 +5,8 @@ title = "All That Shines Is Not Gold: Maintaining Scientific Rigor When Evaluati
 description = "A summary of principles for keeping scientific rigor when using large language models in research: methodological transparency, secure handling of protected health information, quantitative validation with objective metrics, active bias auditing, and clear reporting of computational resources. The core challenges are black-box opacity, hallucinations, and how fast the tooling goes stale."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["llm", "research-methods"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

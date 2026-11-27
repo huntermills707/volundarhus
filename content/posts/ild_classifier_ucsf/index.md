@@ -5,8 +5,8 @@ title = "Machine-Learning Algorithm to Improve Cohort Identification in Intersti
 description = "A publication summary describing a gradient-boosted classifier that identifies interstitial lung disease from EHR data with AUC 0.929. By combining structured codes, pulmonary function tests, and NLP-extracted concepts, the model outperformed code-only approaches. NLP features comprised only 15% of variables but 40% of top predictors. The post offers a blueprint for rare-disease cohort identification: combine structured and unstructured data, use gradient-boosted trees, and prioritize interpretability via ANOVA screening and feature importance."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["ild", "machine-learning", "ehr", "nlp"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

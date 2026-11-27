@@ -5,8 +5,8 @@ title = "Subspecialty ILD Clinic Care is Associated with More Guideline-Concorda
 description = "A summary of a CHEST retrospective cohort study comparing subspecialty ILD clinic care with other ambulatory settings among 6,637 patients. ILD clinic care was associated with more chest CT imaging and antifibrotic therapy, fewer lung biopsies, and lower hazards of hospitalization, emergency department visits, and death. Patients in non-specialty settings were disproportionately Black or Latinx, lived in more socioeconomically deprived neighborhoods, and more often had unspecified ILD diagnoses."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["ild", "ehr"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

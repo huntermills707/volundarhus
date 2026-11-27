@@ -5,10 +5,10 @@ title = "Dice-Rolling Probabilities in TTRPGs – Why a Little Math Makes Your G
 description = "A look at tabletop RPG dice mechanics using a custom Plotly Dash app. The post analyzes classic methods like 3d6 and 4d6 drop lowest, showing how means, variances, and distribution shapes affect character balance. It also covers custom cheat dice, scaling pools toward Gaussian convergence, and practical GM workflows. The core message: visualizing probability curves before adopting house rules prevents campaign-breaking imbalances and keeps randomness fun rather than frustrating."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["probability", "plotly-dash", "python"]
+categories = ["TTRPG"]
 externalLink = ""
-series = []
+series = ["TTRPG Dice Math"]
 +++
 
 ## Introduction

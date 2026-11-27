@@ -5,8 +5,8 @@ title = "Unclear Trajectory and Uncertain Benefit: Creating a Lexicon for Clinic
 description = "Summary of a JAMA Network Open paper: a five-round Delphi consensus process produced a standardized lexicon of 44 clinical uncertainty expressions. Clinicians use this language to communicate with families and colleagues and to track their own reasoning; the lexicon lets NLP pipelines detect uncertainty in clinical notes."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["icu", "palliative-care", "clinical-notes", "nlp"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

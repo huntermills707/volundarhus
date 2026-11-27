@@ -3,8 +3,9 @@ title = "One Keyboard, Two Computers: Making Windows Feel Like niri"
 date = 2026-10-29T09:00:00-07:00
 draft = false
 description = "Using F24 on a Kinesis Advantage360, keyd, LeopardWM, and AutoHotkey to keep one set of niri muscle memories across a KVM switch."
-categories = ["homelab"]
+categories = ["Homelab"]
 tags = ["linux", "windows", "niri", "leopardwm", "autohotkey", "kinesis", "zmk", "qmk", "keyboards"]
+series = []
 author = "Hunter Mills"
 slug = "niri-leopardwm-kvm"
 +++

@@ -5,8 +5,8 @@ title = "Diagnostic Reversion in Dementia Care: A Real-World Analysis of Mild Co
 description = "A full summary of our Alzheimer's & Dementia study of diagnostic reversion among 5,965 UCSF patients. Nearly one in seven patients received an MCI diagnosis after dementia, and 73.4% of those reverters later returned to dementia. Group LASSO logistic regression and random forests identified age, preferred language, care setting, cardiovascular risk, and comorbidity burden as predictors, revealing diagnostic instability shaped by clinical and social factors."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["dementia", "ehr", "statistics"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

@@ -5,8 +5,8 @@ title = "Scaling D&D Monsters Without Making Them Generic"
 description = "The third post in a series on D&D monster modeling tools. A Plotly Dash difficulty scaler moves monsters to a new level or CR within their own edition. Additive curves handle AC, attacks, abilities, and defenses; multiplicative curves handle HP and damage. By shifting each original stat rather than replacing it with an average, the scaler preserves what makes a monster unusually tough, accurate, strong, or dexterous."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["dnd", "plotly-dash", "python"]
+categories = ["TTRPG"]
 externalLink = ""
 series = ["D&D Monster Modeling"]
 +++

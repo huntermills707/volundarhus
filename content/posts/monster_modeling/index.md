@@ -6,8 +6,8 @@ title = "When Monster Stats Interact: Modeling 4e and 5e on Their Own Terms"
 description = "The fourth post in a series on D&D monster modeling tools. A closer look at the modeling choices behind the converter: why target level or CR comes first, how solo and combat-role interactions encode 4e's design math, why max(STR, DEX) beats extra coefficients in one rule but not others, and how Huber loss stacks up against plain and ridge-regularized least squares on messy monster data."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["dnd", "statistics", "python"]
+categories = ["TTRPG"]
 externalLink = ""
 series = ["D&D Monster Modeling"]
 +++

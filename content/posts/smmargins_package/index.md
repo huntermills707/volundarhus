@@ -2,8 +2,9 @@
 date = 2026-05-03T21:46:31-07:00
 title = "Introducing smmargins: Stata-Style Margins for Python StatsModels"
 draft = false
-tags = []
-categories = ["open-source", "Statistics"]
+tags = ["python", "statistics", "marginal-effects", "statsmodels"]
+categories = ["Data Science"]
+series = ["Marginal Effects in Python"]
 summary = "A new Python package bringing Stata's margins command to the StatsModels ecosystem."
 +++
 

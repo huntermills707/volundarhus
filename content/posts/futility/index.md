@@ -5,8 +5,8 @@ title = "How ICU clinicians document ‘Futility’: A 10-year analysis of criti
 description = "An analysis of 2.46 million ICU notes revealing that clinicians almost never write the word futility, preferring terms around prognosis, code status, and risk weighing. Using annual Word2Vec models, the authors mapped eight semantic themes and tracked their evolution over a decade. The rise of code-status documentation and decline of risk-benefit language suggests a shift toward legal clarity. The post argues that NLP systems must trigger on semantic patterns, not keywords, to detect medical futility at all."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["icu", "nlp", "word-embeddings", "clinical-notes", "palliative-care"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

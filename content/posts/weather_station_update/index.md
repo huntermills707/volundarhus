@@ -3,8 +3,9 @@ title: "Weather Station Update: Battery Monitoring and a Fence Mount"
 date: 2026-10-25
 draft: false
 author: "Hunter Mills"
-tags: []
-categories: ["homelab", "projects"]
+tags: ["weather-station", "raspberry-pi", "embedded"]
+categories: ["Homelab"]
+series: ["Backyard Weather Station"]
 description: "The backyard weather station gets battery voltage and solar charging telemetry, low-battery alerts, and a proper home on the fence."
 ---
 

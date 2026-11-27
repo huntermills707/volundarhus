@@ -5,8 +5,8 @@ title = "Matching Monsters Across Editions: Building a Dataset from Messy PDFs"
 description = "The first post in a series on D&D monster modeling tools. Before fitting conversion rules, I had to extract stat blocks from two very different Monster Manual PDFs and decide which creatures belonged together. This post covers geometry-aware PDF parsing, OCR repairs, name matching, non-numeric metadata, and the evaluation checks that keep bad pairs out of the training data."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["dnd", "pdf-parsing", "python"]
+categories = ["TTRPG"]
 externalLink = ""
 series = ["D&D Monster Modeling"]
 +++

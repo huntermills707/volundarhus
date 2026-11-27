@@ -5,8 +5,8 @@ title = "Clinician Self-Referentiality: Factors Associated With Author Pronoun U
 description = "Summary of a CHEST Critical Care paper on personal pronoun use in 842,953 ICU notes from 5,799 patients. Using cluster-robust Poisson regression on NLP-tagged pronouns, we found pronoun frequency tracks author characteristics (role, training level, specialty, gender), not patient demographics or illness severity. Pronouns seem to reflect documentation norms more than clinician agency or patient connection."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["icu", "nlp", "clinical-notes"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

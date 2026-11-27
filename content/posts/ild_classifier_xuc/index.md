@@ -5,8 +5,8 @@ title = "Development and validation of a generalisable machine learning algorith
 description = "A summary of a Lancet-affiliated study developing a generalizable ILD classifier across four UC health systems. Mapped to the OMOP common data model, the gradient-boosting model achieved 0.96 ROC-AUC and 0.97 sensitivity, dramatically outperforming rule-based approaches. External validation at UCI, UCLA, and UCSD confirmed transportability without site-specific tweaks. The authors outline how OMOP-compatible phenotyping pipelines can accelerate multi-center research and improve clinical trial recruitment."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["ild", "machine-learning", "ehr", "omop"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

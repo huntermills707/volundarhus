@@ -5,8 +5,8 @@ title = "Lexical associations can characterize clinical documentation trends rel
 description = "This post describes a study tracking the semantic relationship between metastatic cancer and palliative-care language across 28 million inpatient notes. Annual Word2Vec models revealed a slow but significant decline in cosine similarity over 2013-2020, suggesting evolving documentation practices. Possible explanations include documentation fatigue, shift toward primary palliative care, and new oncology therapies. The authors argue that embedding-based audits can surface temporal linguistic drift without labeled data, enriching downstream predictive models."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["nlp", "word-embeddings", "clinical-notes", "palliative-care", "oncology"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

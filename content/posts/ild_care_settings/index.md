@@ -5,8 +5,8 @@ title = "Real-World Differences in ILD Diagnosis, Management, and Outcomes Acros
 description = "A summary of a retrospective cohort study of 6,637 adults with interstitial lung disease at a single academic health system. Patients seen in an ILD subspecialty clinic had more CT imaging and antifibrotic use, less lung biopsy and chronic prednisone use, delayed acute-care utilization, and lower mortality than patients in other ambulatory settings. Non-specialty pathways disproportionately served younger, racially and ethnically minoritized, and socioeconomically disadvantaged patients."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["ild", "ehr"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

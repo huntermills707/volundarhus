@@ -5,10 +5,10 @@ title = "Updating Plotly’s Choropleth Example with Current US Census Data"
 description = "A tutorial updating Plotly's official choropleth example with current U.S. Census data: GeoJSON basics, converting TIGER/Line shapefiles with GeoPandas, fetching unemployment rates from the ACS API, and merging it all into an interactive county-level map."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Principled Deprivation Index", "Tutorial"]
+tags = ["tutorial", "plotly-dash", "python", "geospatial", "census"]
+categories = ["Data Science"]
 externalLink = ""
-series = []
+series = ["Principled Deprivation Index"]
 +++
 
 ## Introduction

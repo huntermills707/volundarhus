@@ -3,8 +3,9 @@ title: "Weather Station Update: Open-Air Sensors and Low-Battery Sleep"
 date: 2026-11-17
 draft: false
 author: "Hunter Mills"
-tags: []
-categories: ["homelab", "projects"]
+tags: ["weather-station", "raspberry-pi", "embedded", "air-quality"]
+categories: ["Homelab"]
+series: ["Backyard Weather Station"]
 description: "The backyard weather station gets an open-air BME680, particulate measurements and AQI, a controllable sensor fan, and a low-battery deep-sleep mode."
 ---
 

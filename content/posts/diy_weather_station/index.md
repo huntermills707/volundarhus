@@ -3,8 +3,9 @@ title: "Building a Backyard Weather Station (So Far)"
 date: 2026-10-09
 draft: false
 author: "Hunter Mills"
-tags: []
-categories: ["homelab", "projects"]
+tags: ["weather-station", "raspberry-pi", "embedded"]
+categories: ["Homelab"]
+series: ["Backyard Weather Station"]
 description: "Getting back into embedded systems with a SparkFun MicroMod weather kit, a Raspberry Pi, some no-name Amazon parts, and a more agentic workflow with Linear and CodeRabbit."
 ---
 

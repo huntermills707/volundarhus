@@ -5,8 +5,8 @@ title = "Traumatic Brain Injury and Risk of Malignant Brain Tumors in Civilian P
 description = "A multicenter retrospective cohort study across three U.S. health systems found moderate-to-severe traumatic brain injury was associated with a 57% higher risk of malignant brain tumors, while mild TBI showed no significant association. Using propensity-score matched Cox models and random-effects meta-analysis, the combined hazard ratio was 1.57 with negligible heterogeneity. The authors discuss neuroinflammation and oxidative stress as plausible mechanisms, and suggest longer-term neuro-oncologic surveillance for severe TBI survivors."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["tbi", "trauma", "ehr", "oncology"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

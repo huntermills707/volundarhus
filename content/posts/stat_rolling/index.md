@@ -5,10 +5,10 @@ title = "Beyond the Roll: Deep Dive into Rolling Stat Generation in TTRPGs"
 description = "An expanded follow-up to the dice-rolling post, introducing full stat-generation workflows with modification rules. The updated Dash app enumerates exact joint probability distributions for sets of ability scores, supporting drop-lowest, replace-floor, and custom die faces. The post discusses TTRPG design implications such as preventing broken characters, avoiding power-creep traps, and finding the sweet spot between mean and variance. It also peeks under the hood at the combinatorial enumeration code."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["probability", "plotly-dash", "python"]
+categories = ["TTRPG"]
 externalLink = ""
-series = []
+series = ["TTRPG Dice Math"]
 +++
 
 In my previous post, [Dice-Rolling Probabilities in TTRPGs – Why a Little Math Makes Your Game Feel Fairer](/posts/dice_rolls), I introduced a Dash app that visualizes the probability distributions of common dice rolling methods. We looked at 3d6, 4d6 drop lowest, and the convergence toward Gaussian distributions with larger pools.

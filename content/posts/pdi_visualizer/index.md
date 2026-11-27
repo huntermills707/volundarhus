@@ -5,10 +5,10 @@ title = "Visualizing Social Determinants of Health at the County Level"
 description = "A Plotly/Dash visualizer for exploring county-level deprivation indexes next to CDC health outcomes: synchronized choropleth maps, state selectors, and hover-over details. Juxtapose the Principled Deprivation Index against stroke or diabetes prevalence without wading through spreadsheets."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Principled Deprivation Index", "Personal Projects"]
+tags = ["plotly-dash", "python", "geospatial", "health-equity"]
+categories = ["Data Science"]
 externalLink = ""
-series = []
+series = ["Principled Deprivation Index"]
 +++
 
 Social determinants of health (SDoH) shape outcomes just as much as clinical care, but most public-health data is hard to grok as a table or a static chart. The granular patterns that drive disparities get lost. I recently built a Plotly/Dash visualizer for the Principled Deprivation Index that lets anyone explore a suite of deprivation indexes alongside CDC-reported condition rates, all mapped to U.S. counties.

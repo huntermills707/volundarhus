@@ -5,8 +5,8 @@ title = "Variation in Mentions of Race and Ethnicity in Notes in Intensive Care 
 description = "A study of 292,457 ICU notes from 5,573 patients found that Black patients were more than twice as likely as White patients to have race or ethnicity mentioned in their charts, even after adjusting for patient, note, and clinician characteristics. Asian patients had the lowest mention rate. The authors flag the consequences for clinician-patient relationships and for algorithms trained on clinical text."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Publication Summary"]
+tags = ["icu", "nlp", "clinical-notes", "bias", "health-equity"]
+categories = ["Publications"]
 externalLink = ""
 series = []
 +++

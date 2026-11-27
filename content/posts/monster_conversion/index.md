@@ -5,8 +5,8 @@ title = "Converting D&D Monsters with Formulas a GM Can Actually Use"
 description = "The second post in a series on D&D monster modeling tools. Using 154 matched cross-edition monster pairs, I fit short, explainable conversion rules for HP, AC, attacks, damage, abilities, defenses, and saving throws. A worked example shows how target level or CR, monster roles, and 80% prediction ranges turn the models into practical GM tools rather than black-box stat generators."
 slug = ""
 authors = ["Hunter Mills"]
-tags = []
-categories = ["Personal Projects", "TTRPG Mechanics"]
+tags = ["dnd", "statistics", "python"]
+categories = ["TTRPG"]
 externalLink = ""
 series = ["D&D Monster Modeling"]
 +++
