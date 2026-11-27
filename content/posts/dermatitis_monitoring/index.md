@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["dermatology", "mobile-health"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://www.tandfonline.com/doi/full/10.1080/09546634.2025.2555983" description="Published in the Journal of Dermatological Treatment" >}}
 

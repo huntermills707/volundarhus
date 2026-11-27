@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["nlp", "word-embeddings", "clinical-notes", "cpp"]
 categories = ["Data Science"]
 externalLink = ""
-series = []
 math = true
 +++
 

@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["dementia", "ehr", "statistics"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://doi.org/10.1002/dad2.70523" description="Published in Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring" >}}
 

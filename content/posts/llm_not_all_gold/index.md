@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["llm", "research-methods"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 
 {{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/41364426/" description="Published in Anesthesiology — abstract via PubMed" >}}

@@ -1,13 +1,13 @@
----
-title: "Weather Station Update: Open-Air Sensors and Low-Battery Sleep"
-date: 2026-11-17
-draft: false
-author: "Hunter Mills"
-tags: ["weather-station", "raspberry-pi", "embedded", "air-quality"]
-categories: ["Homelab"]
-series: ["Backyard Weather Station"]
-description: "The backyard weather station gets an open-air BME680, particulate measurements and AQI, a controllable sensor fan, and a low-battery deep-sleep mode."
----
++++
+author = 'Hunter Mills'
+categories = ['Homelab']
+date = '2026-11-17'
+description = 'The backyard weather station gets an open-air BME680, particulate measurements and AQI, a controllable sensor fan, and a low-battery deep-sleep mode.'
+draft = false
+series = ['Backyard Weather Station']
+tags = ['weather-station', 'raspberry-pi', 'embedded', 'air-quality']
+title = 'Weather Station Update: Open-Air Sensors and Low-Battery Sleep'
++++
 
 In [the original weather-station post]({{< relref "diy_weather_station" >}}), the next steps were a separate environmental sensor, air-quality monitoring, and lower power consumption. In [the last update]({{< relref "weather_station_update" >}}), the station got battery telemetry and a fence mount, but the thermometer was still sitting beside a warm charger.
 

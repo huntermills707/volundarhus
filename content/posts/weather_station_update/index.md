@@ -1,13 +1,13 @@
----
-title: "Weather Station Update: Battery Monitoring and a Fence Mount"
-date: 2026-10-25
-draft: false
-author: "Hunter Mills"
-tags: ["weather-station", "raspberry-pi", "embedded"]
-categories: ["Homelab"]
-series: ["Backyard Weather Station"]
-description: "The backyard weather station gets battery voltage and solar charging telemetry, low-battery alerts, and a proper home on the fence."
----
++++
+author = 'Hunter Mills'
+categories = ['Homelab']
+date = '2026-10-25'
+description = 'The backyard weather station gets battery voltage and solar charging telemetry, low-battery alerts, and a proper home on the fence.'
+draft = false
+series = ['Backyard Weather Station']
+tags = ['weather-station', 'raspberry-pi', 'embedded']
+title = 'Weather Station Update: Battery Monitoring and a Fence Mount'
++++
 
 In [the last weather-station post]({{< relref "diy_weather_station" >}}), I had a working dashboard and a pile of hardware that still looked like a science fair project. Two things have improved since then: the station can now tell me how its battery is doing, and the whole assembly is mounted on the fence.
 

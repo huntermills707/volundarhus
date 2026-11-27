@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["bias", "health-equity", "machine-learning", "dermatology"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://www.nature.com/articles/s41746-025-01975-7" description="Published in npj Digital Medicine" >}}
 

@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["tbi", "trauma", "ehr", "oncology"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2837955" description="Published in JAMA Network Open" >}}
 

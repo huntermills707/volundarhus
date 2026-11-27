@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "nlp", "machine-learning", "clinical-notes"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 enableDisqus = false
 +++
 {{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/34136824/" description="Abstract via PubMed" >}}

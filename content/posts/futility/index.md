@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "nlp", "word-embeddings", "clinical-notes", "palliative-care"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 
 {{< app_demo site="paper" url="https://www.sciencedirect.com/science/article/pii/S0883944126001048" description="Published in the Journal of Critical Care" >}}

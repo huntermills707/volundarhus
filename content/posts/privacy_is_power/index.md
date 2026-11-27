@@ -1,13 +1,12 @@
----
-title: "The Cremation Ad: Privacy, Power, and Taking Back a Little Control"
-date: 2026-09-24
-draft: false
-author: "Hunter Mills"
-tags: ["privacy", "self-hosting"]
-categories: ["Homelab"]
-series: []
-description: "The ad networks knew something I never told them. Cremation ads, for days. Here's how they knew — and what I did about it."
----
++++
+author = 'Hunter Mills'
+categories = ['Homelab']
+date = '2026-09-24'
+description = "The ad networks knew something I never told them. Cremation ads, for days. Here's how they knew — and what I did about it."
+draft = false
+tags = ['privacy', 'self-hosting']
+title = 'The Cremation Ad: Privacy, Power, and Taking Back a Little Control'
++++
 
 This one is a departure from the usual regression models and homelab write-ups. It's more personal, and it's been sitting in my drafts for a while.
 

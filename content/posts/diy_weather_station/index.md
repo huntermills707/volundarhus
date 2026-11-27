@@ -1,13 +1,13 @@
----
-title: "Building a Backyard Weather Station (So Far)"
-date: 2026-10-09
-draft: false
-author: "Hunter Mills"
-tags: ["weather-station", "raspberry-pi", "embedded"]
-categories: ["Homelab"]
-series: ["Backyard Weather Station"]
-description: "Getting back into embedded systems with a SparkFun MicroMod weather kit, a Raspberry Pi, some no-name Amazon parts, and a more agentic workflow with Linear and CodeRabbit."
----
++++
+author = 'Hunter Mills'
+categories = ['Homelab']
+date = '2026-10-09'
+description = 'Getting back into embedded systems with a SparkFun MicroMod weather kit, a Raspberry Pi, some no-name Amazon parts, and a more agentic workflow with Linear and CodeRabbit.'
+draft = false
+series = ['Backyard Weather Station']
+tags = ['weather-station', 'raspberry-pi', 'embedded']
+title = 'Building a Backyard Weather Station (So Far)'
++++
 
 I haven't done embedded work in years. Most of my time goes to clinical data, models, and the occasional homelab rabbit hole. This project started as an excuse to get back to hardware: a weather station in the backyard, reporting to a Raspberry Pi, with a dashboard I can check from my phone.
 

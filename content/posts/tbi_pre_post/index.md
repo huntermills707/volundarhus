@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["tbi", "trauma", "ehr", "mental-health"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/41689233/" description="Abstract via PubMed" >}}
 

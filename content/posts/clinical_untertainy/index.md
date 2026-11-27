@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "palliative-care", "clinical-notes", "nlp"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://pubmed.ncbi.nlm.nih.gov/39559986/" description="Published in JAMA Network Open" >}}
 

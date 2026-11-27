@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["spinal-cord-injury", "trauma", "ehr"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2840897" description="Published in JAMA Network Open" >}}
 

@@ -5,7 +5,6 @@ draft = false
 description = "Using F24 on a Kinesis Advantage360, keyd, LeopardWM, and AutoHotkey to keep one set of niri muscle memories across a KVM switch."
 categories = ["Homelab"]
 tags = ["linux", "windows", "niri", "leopardwm", "autohotkey", "kinesis", "zmk", "qmk", "keyboards"]
-series = []
 author = "Hunter Mills"
 slug = "niri-leopardwm-kvm"
 +++

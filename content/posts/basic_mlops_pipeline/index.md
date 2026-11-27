@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["mlops", "kubernetes", "machine-learning", "nlp", "python"]
 categories = ["Data Science"]
 externalLink = ""
-series = []
 +++
 [GitHub Repo](https://github.com/huntermills707/haterade)
 

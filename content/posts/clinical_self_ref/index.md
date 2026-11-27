@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "nlp", "clinical-notes"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://doi.org/10.1016/j.chstcc.2026.100294" description="Published in CHEST Critical Care" >}}
 

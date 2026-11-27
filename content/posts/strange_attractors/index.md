@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["javascript", "chaos", "generative-art", "hugo"]
 categories = ["Creative Coding"]
 externalLink = ""
-series = []
 +++
 
 

@@ -1,13 +1,13 @@
----
-title: "Marginal Effects for StatsModels: A Stata-style `margins` in Python"
-date: 2026-04-22
-draft: false
-tags: ["python", "statistics", "marginal-effects", "statsmodels"]
-categories: ["Data Science"]
-series: ["Marginal Effects in Python"]
-math: true
-description: "A Python module that brings Stata-style marginal effects to StatsModels: a unified delta-method framework with numerical Jacobians for adjusted predictions, marginal effects, and discrete contrasts on any GLM-family model, with patsy handling polynomials, interactions, and splines correctly. Includes a difference-in-differences helper for nonlinear models. Roughly 500 lines."
----
++++
+categories = ['Data Science']
+date = '2026-04-22'
+description = 'A Python module that brings Stata-style marginal effects to StatsModels: a unified delta-method framework with numerical Jacobians for adjusted predictions, marginal effects, and discrete contrasts on any GLM-family model, with patsy handling polynomials, interactions, and splines correctly. Includes a difference-in-differences helper for nonlinear models. Roughly 500 lines.'
+draft = false
+math = true
+series = ['Marginal Effects in Python']
+tags = ['python', 'statistics', 'marginal-effects', 'statsmodels']
+title = 'Marginal Effects for StatsModels: A Stata-style `margins` in Python'
++++
 
 > **Archived.** The module described here grew into the **smmargins**
 > package, which has since been superseded by **pymargins**, a

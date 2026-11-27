@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "nlp", "word-embeddings", "clinical-notes", "bias", "health-equity"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://journal.chestnet.org/article/S0012-3692(24)00007-2/abstract" description="Published in CHEST" >}}
 

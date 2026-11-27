@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["ild", "ehr"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 
 {{< app_demo site="paper" url="https://doi.org/10.1016/j.chest.2026.09.110" description="Published in CHEST" >}}

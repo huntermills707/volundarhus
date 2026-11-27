@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["ild", "machine-learning", "ehr", "nlp"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://academic.oup.com/ajrccm/article/207/10/1398/8428048" description="Published in the American Journal of Respiratory and Critical Care Medicine" >}}
 

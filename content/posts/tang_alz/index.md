@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["dementia", "ehr", "machine-learning", "knowledge-graphs"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://www.nature.com/articles/s43587-024-00573-8" description="Published in Nature Aging" >}}
 

@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["ild", "ehr"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 
 {{< app_demo site="paper" url="https://doi.org/10.1093/ajrccm/aamag162.2858" description="Published in the American Journal of Respiratory and Critical Care Medicine" >}}

@@ -44,7 +44,7 @@
         {{- $cats := slice }}{{ range .GetTerms "categories" }}{{ $cats = $cats | append (.Data.Term | urlize) }}{{ end }}
         {{- $tags := slice }}{{ range .GetTerms "tags" }}{{ $tags = $tags | append .LinkTitle }}{{ end }}
         <li data-categories="{{ delimit $cats " " }}"
-            data-search="{{ lower (printf "%s %s %s %s" .Title (.Description | default .Summary | plainify) (delimit $tags " ") (delimit .Params.series " ")) }}">
+            data-search="{{ lower (printf "%s %s %s %s" .Title (.Description | default .Summary | plainify) (delimit $tags " ") (delimit (.Params.series | default slice) " ")) }}">
           <span class="date">{{ .Date | time.Format "Jan 2" }}</span>
           <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
         </li>

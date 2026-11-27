@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["patient-safety", "workflow"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 
 {{< app_demo site="paper" url="https://journals.lww.com/anesthesiologyopen/fulltext/2026/01000/time_and_motion_analysis_of_controlled_substance.8.aspx" description="Published in Anesthesiology Open" >}}

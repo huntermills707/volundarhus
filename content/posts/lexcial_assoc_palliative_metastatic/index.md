@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["nlp", "word-embeddings", "clinical-notes", "palliative-care", "oncology"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://www.nature.com/articles/s41598-025-01828-z" description="Published in Scientific Reports" >}}
 

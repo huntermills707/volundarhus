@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "nlp", "clinical-notes", "bias", "health-equity"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://aacnjournals.org/ajcconline/article-abstract/33/6/462/32573/Variation-in-Mentions-of-Race-and-Ethnicity-in?redirectedFrom=fulltext" description="Published in the American Journal of Critical Care" >}}
 

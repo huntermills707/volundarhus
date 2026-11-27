@@ -8,7 +8,6 @@ authors = ["Hunter Mills"]
 tags = ["icu", "nlp", "clinical-notes"]
 categories = ["Publications"]
 externalLink = ""
-series = []
 +++
 {{< app_demo site="paper" url="https://pmc.ncbi.nlm.nih.gov/articles/PMC11638541/" description="Published in CHEST" >}}
 

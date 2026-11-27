@@ -1,13 +1,13 @@
----
-title: "pymargins: A Ground-Up Redesign of Marginal Effects for Python"
-date: 2026-05-31
-draft: false
-tags: ["python", "statistics", "marginal-effects", "jax"]
-categories: ["Data Science"]
-series: ["Marginal Effects in Python"]
-math: true
-description: "pymargins is a from-scratch redesign of my earlier smmargins package: marginal effects for Python (adjusted predictions, slopes, contrasts, difference-in-differences) built around a session that pre-commits to its inference posture, with JAX autodiff for exact gradients and Hessians, a curvature diagnostic that flags when the delta method is unsafe, and adapters for statsmodels, linearmodels, lifelines, and scikit-learn."
----
++++
+categories = ['Data Science']
+date = '2026-05-31'
+description = 'pymargins is a from-scratch redesign of my earlier smmargins package: marginal effects for Python (adjusted predictions, slopes, contrasts, difference-in-differences) built around a session that pre-commits to its inference posture, with JAX autodiff for exact gradients and Hessians, a curvature diagnostic that flags when the delta method is unsafe, and adapters for statsmodels, linearmodels, lifelines, and scikit-learn.'
+draft = false
+math = true
+series = ['Marginal Effects in Python']
+tags = ['python', 'statistics', 'marginal-effects', 'jax']
+title = 'pymargins: A Ground-Up Redesign of Marginal Effects for Python'
++++
 
 A while back I wrote about [marginal effects for StatsModels]({{< ref "smmargins" >}})
 and then [released that work as **smmargins**]({{< ref "smmargins_package" >}}),
