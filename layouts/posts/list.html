@@ -1,0 +1,60 @@
+{{- /*
+  Local override of the theme's posts list: every post on one page, grouped
+  by year, with category chips and a text filter (assets/js/posts-filter.js).
+  Without JS the chips are plain links to the category pages.
+*/ -}}
+{{ define "title" }}
+  {{ title (i18n (lower .Title)) | default .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  {{- $posts := where .Pages "Draft" false }}
+  <section class="container list posts-index">
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+          {{ title (i18n (lower .Title)) | default .Title }}
+        </a>
+      </h1>
+    </header>
+    {{ .Content }}
+
+    <div class="post-filter" data-post-filter>
+      <nav class="post-filter-chips" aria-label="Filter posts by category">
+        <a class="chip" href="{{ .RelPermalink }}" data-category="" aria-current="true">
+          All <span class="chip-count">{{ len $posts }}</span>
+        </a>
+        {{- range site.Taxonomies.categories.ByCount }}
+        <a class="chip" href="{{ .Page.RelPermalink }}" data-category="{{ .Page.Data.Term | urlize }}">
+          {{ .Page.LinkTitle }} <span class="chip-count">{{ .Count }}</span>
+        </a>
+        {{- end }}
+      </nav>
+      <div class="post-filter-search" hidden>
+        <label class="sr-only" for="post-filter-q">Filter posts</label>
+        <input id="post-filter-q" type="search" placeholder="Filter by title, description, or tag…" autocomplete="off">
+      </div>
+      <p class="post-filter-status" role="status" aria-live="polite" hidden></p>
+    </div>
+
+    {{- range $posts.GroupByDate "2006" }}
+    <section class="post-year" data-year="{{ .Key }}">
+      <h2 class="post-year-title">{{ .Key }}</h2>
+      <ul>
+        {{- range .Pages }}
+        {{- $cats := slice }}{{ range .GetTerms "categories" }}{{ $cats = $cats | append (.Data.Term | urlize) }}{{ end }}
+        {{- $tags := slice }}{{ range .GetTerms "tags" }}{{ $tags = $tags | append .LinkTitle }}{{ end }}
+        <li data-categories="{{ delimit $cats " " }}"
+            data-search="{{ lower (printf "%s %s %s %s" .Title (.Description | default .Summary | plainify) (delimit $tags " ") (delimit .Params.series " ")) }}">
+          <span class="date">{{ .Date | time.Format "Jan 2" }}</span>
+          <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+    <p class="post-filter-empty" hidden>No posts match. <a href="{{ .RelPermalink }}" data-filter-reset>Show all posts</a>.</p>
+  </section>
+
+  {{- $js := resources.Get "js/posts-filter.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
